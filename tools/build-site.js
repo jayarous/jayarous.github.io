@@ -361,7 +361,7 @@ ${g.faq.map(([q, a]) => `            <div><dt>${esc(q)}</dt><dd>${esc(a)}</dd></
         <section class="app-section">
           <h2>More guides</h2>
           <ul class="ticks guide-links">
-${guides.filter((o) => o.slug !== g.slug).map((o) => `            <li><a href="/guides/${o.slug}/">${esc(o.linkText)}</a></li>`).join("\n")}
+${guides.filter((o) => o.slug !== g.slug && o.appSlug === g.appSlug).map((o) => `            <li><a href="/guides/${o.slug}/">${esc(o.linkText)}</a></li>`).join("\n")}
           </ul>
         </section>
       </div>
@@ -387,7 +387,11 @@ ${guides.filter((o) => o.slug !== g.slug).map((o) => `            <li><a href="/
   });
 }
 
-const guidesLead = `Short how-to guides by ${OWNER} on staying in touch when there is no internet or mobile signal, using Android phones.`;
+const guidesLead = `Short how-to guides by ${OWNER} for the Android apps he builds.`;
+const guideGroups = [
+  { appSlug: "airgrid", heading: "Staying in touch without internet", note: "These guides use AirGrid, an offline chat app for Android." },
+  { appSlug: "billgen", heading: "Invoicing on your phone", note: "These guides use BillGen, an invoice maker for Android." }
+];
 
 function guidesHubPage() {
   const main = `    <section class="section">
@@ -395,26 +399,29 @@ function guidesHubPage() {
         <nav class="crumbs" aria-label="Breadcrumb">
           <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Guides</span>
         </nav>
-        <h1 class="page-title">Guides: staying in touch without internet</h1>
+        <h1 class="page-title">Guides</h1>
         <p class="lede">${esc(guidesLead)}</p>
-        <ul class="guide-list">
-${guides.map((g) => `          <li>
-            <h2><a href="/guides/${g.slug}/">${esc(g.linkText)}</a></h2>
-            <p>${esc(g.lead)}</p>
-          </li>`).join("\n")}
-        </ul>
-        <p class="note">These guides use <a href="/apps/airgrid/">AirGrid</a>, an offline chat app for Android.</p>
+${guideGroups.map((grp) => `        <section class="guide-group">
+          <h2>${esc(grp.heading)}</h2>
+          <p class="note">${esc(grp.note)} <a href="/apps/${grp.appSlug}/">About ${esc(apps.find((a) => a.slug === grp.appSlug).name)}</a></p>
+          <ul class="guide-list">
+${guides.filter((g) => g.appSlug === grp.appSlug).map((g) => `            <li>
+              <h3><a href="/guides/${g.slug}/">${esc(g.linkText)}</a></h3>
+              <p>${esc(g.lead)}</p>
+            </li>`).join("\n")}
+          </ul>
+        </section>`).join("\n")}
       </div>
     </section>`;
   const list = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Guides: staying in touch without internet",
+    name: `Guides by ${OWNER}`,
     itemListElement: guides.map((g, i) => ({ "@type": "ListItem", position: i + 1, name: g.h1, url: `${ORIGIN}/guides/${g.slug}/` }))
   };
   return shell({
-    title: `Guides to chatting without internet on Android | ${OWNER}`,
-    description: "How-to guides on messaging and talking without internet on Android: offline chat basics, cruises, flights, walkie talkie audio and rider-to-rider talk.",
+    title: `How-to guides for AirGrid and BillGen | ${OWNER}`,
+    description: "How-to guides for Android: chatting without internet with AirGrid, and making GST and VAT invoices on your phone with BillGen.",
     urlPath: "/guides/",
     jsonld: [list, crumbs([["Home", "/"], ["Guides", "/guides/"]])],
     main
@@ -422,9 +429,12 @@ ${guides.map((g) => `          <li>
 }
 
 function guidesHubMarkdown() {
-  const lines = ["# Guides: staying in touch without internet", "", guidesLead, ""];
-  guides.forEach((g) => lines.push(`- **${g.linkText}:** ${g.lead} ${ORIGIN}/guides/${g.slug}/`));
-  lines.push("", `These guides use AirGrid, an offline chat app for Android: ${ORIGIN}/apps/airgrid/`, "");
+  const lines = ["# Guides", "", guidesLead, ""];
+  guideGroups.forEach((grp) => {
+    lines.push(`## ${grp.heading}`, "", `${grp.note} ${ORIGIN}/apps/${grp.appSlug}/`, "");
+    guides.filter((g) => g.appSlug === grp.appSlug).forEach((g) => lines.push(`- **${g.linkText}:** ${g.lead} ${ORIGIN}/guides/${g.slug}/`));
+    lines.push("");
+  });
   return lines.join("\n");
 }
 
@@ -475,7 +485,7 @@ const pages = [
   { id: "home", url: `${ORIGIN}/`, title: `${OWNER}: websites, Android apps and custom software`, purpose: "Who Jayarous Antony KS is, what he builds, his work and how to contact him", topic: "services", body: homeMarkdown() },
   { id: "apps", url: `${ORIGIN}/apps/`, title: `Android apps by ${OWNER}`, purpose: "List of the four Android apps with links to each app page and Google Play", topic: "apps", body: hubMarkdown() },
   ...apps.map((a) => ({ id: a.slug, url: `${ORIGIN}/apps/${a.slug}/`, title: a.title, purpose: `What ${a.name} does, price, privacy and common questions`, topic: "apps", body: appMarkdown(a) })),
-  { id: "guides", url: `${ORIGIN}/guides/`, title: "Guides: staying in touch without internet", purpose: "List of how-to guides on chatting and talking without internet on Android", topic: "guides", body: guidesHubMarkdown() },
+  { id: "guides", url: `${ORIGIN}/guides/`, title: `Guides by ${OWNER}`, purpose: "List of how-to guides for AirGrid and BillGen", topic: "guides", body: guidesHubMarkdown() },
   ...guides.map((g) => ({ id: g.slug, url: `${ORIGIN}/guides/${g.slug}/`, title: g.title, purpose: `Guide: ${g.linkText}`, topic: "guides", body: guideMarkdown(g) }))
 ];
 pages.forEach((p) => write(path.join(work, "source", `${p.id}.md`), p.body));

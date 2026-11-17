@@ -98,7 +98,7 @@ const apps = [
     lead: "BillGen is an Android app for creating professional invoices on your phone, sharing them as PDF and keeping track of who has paid. It has tax-ready invoice formats for the UAE, Saudi Arabia, Oman and India, and it works offline.",
     storeCategory: "Business",
     schemaCategory: "BusinessApplication",
-    price: "Free to start with a limited number of invoices. Pro removes the limit and unlocks extra features.",
+    price: "Free for one company and up to 3 new invoices a day. Pro is a subscription that removes the limit.",
     updated: "15 November 2026",
     audienceTitle: "Who BillGen is for",
     audience: [
@@ -154,7 +154,7 @@ const apps = [
     faq: [
       ["Which countries' invoice formats does BillGen support?", "The UAE, Saudi Arabia, Oman and India, plus a general VAT format. Layouts include tax invoice, simplified invoice, bill of supply and credit note."],
       ["Does BillGen work offline?", "Yes. BillGen works offline and stores your data on your phone. You can back it up and restore it."],
-      ["Is BillGen free?", "You can start free with a limited number of invoices. Upgrading to Pro removes the limit and unlocks extra features."],
+      ["Is BillGen free?", "The free plan covers one company and up to 3 new invoices a day. Pro is a subscription that removes the limit and adds features such as recurring invoices, payment follow-ups and your own logo."],
       ["Can BillGen share invoices as PDF?", "Yes. Invoices can be shared or printed as PDF."],
       ["Does BillGen add the QR code needed on Saudi invoices?", "Yes. Saudi invoices made in BillGen carry the required QR code. For India, unpaid invoices show a UPI scan-to-pay QR code."],
       ["Can BillGen help with a VAT or GST return?", "BillGen can export a tax report as CSV to help you prepare your VAT or GST return."]
@@ -520,6 +520,175 @@ const guides = [
       ["Does Rider Mode need internet?", "No. The audio goes directly between the two phones over Bluetooth and Wi-Fi Direct."],
       ["Can more than two riders join?", "Rider Mode is one-to-one. For a group, short walkie clips can be sent to everyone on the local mesh."],
       ["Will it work with my helmet headset?", "It depends on your phone and headset. Try it before the ride."]
+    ]
+  },
+  {
+    slug: "make-invoice-on-phone-send-pdf",
+    appSlug: "billgen",
+    title: "Make an invoice on your phone and send it as a PDF (Android)",
+    h1: "How to make an invoice on your phone and send it as a PDF",
+    linkText: "How to make an invoice on your phone and send it as a PDF",
+    metaDescription: "Create an invoice on an Android phone, turn it into a PDF and send it by WhatsApp or email. Step-by-step with BillGen, an invoice maker that works offline.",
+    lead: "You can create an invoice on an Android phone, turn it into a PDF and send it to your customer by WhatsApp or email. This guide uses BillGen, an invoice maker that works offline and keeps your data on your phone.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "What you need",
+        bullets: [
+          "Your business name and address",
+          "Your customer's name, plus a phone number or email if you want to send the invoice straight from the app",
+          "The items or services you are billing, with prices",
+          "The tax rate, if you charge tax"
+        ]
+      },
+      {
+        title: "Set up once",
+        steps: [
+          "Install BillGen from Google Play and open it. It starts with a Demo Company so you can look around.",
+          "Tap \"Set up my business\" on the Dashboard banner and enter your company name. The sample data is removed automatically.",
+          "In Settings, open Company profile and add your legal name, address, tax number, currency and country rules.",
+          "In Settings, open Taxes, add the tax rates you charge and choose the default.",
+          "Open Customers and tap Add. Only the name is required.",
+          "Open Products and tap Add. A name and a price are required. You can also import a product list from a CSV file."
+        ]
+      },
+      {
+        title: "Create the invoice",
+        paragraphs: ["In BillGen you create an order first, then turn it into an invoice."],
+        steps: [
+          "Tap New order on the Dashboard, pick a customer and add at least one line item.",
+          "Choose payment terms to give the invoice a due date.",
+          "Create the invoice. It gets the next number in your sequence."
+        ]
+      },
+      {
+        title: "Send it",
+        steps: [
+          "Open the invoice and choose View PDF to preview it.",
+          "Share or print the PDF from the preview.",
+          "To send it straight to the customer, use Send via WhatsApp or Send via email on the invoice. These use the phone number or email saved on the customer."
+        ]
+      },
+      {
+        title: "Good to know",
+        bullets: [
+          "The free plan covers one company and up to 3 new invoices a day. Pro is a subscription that removes the limit.",
+          "Billing the same customer again? Open the earlier invoice and choose Duplicate invoice.",
+          "Editing a customer later does not change invoices you have already issued.",
+          "Your data lives on your phone only, so back it up from Settings."
+        ]
+      }
+    ],
+    faq: [
+      ["Can I make an invoice without internet?", "Yes. BillGen works offline and stores your data on your phone. You need a connection only to send the PDF by WhatsApp or email."],
+      ["Is BillGen free?", "The free plan covers one company and up to 3 new invoices a day. Pro is a subscription that removes the limit and adds features such as recurring invoices, payment follow-ups and your own logo."],
+      ["Can I put my logo on the invoice?", "A company logo is a Pro feature. The header and footer text come from Settings, under Branding."],
+      ["How do I record that a customer has paid?", "Open the invoice and choose Record payment. Enter the amount, date and method. A part payment marks the invoice Partially paid, and a full payment marks it Paid."]
+    ]
+  },
+  {
+    slug: "vat-invoice-app-uae-saudi-oman",
+    appSlug: "billgen",
+    title: "Create a VAT invoice on your phone in the UAE, Saudi Arabia or Oman",
+    h1: "How to create a VAT invoice on your phone in the UAE, Saudi Arabia or Oman",
+    linkText: "How to create a VAT invoice in the UAE, Saudi Arabia or Oman",
+    metaDescription: "BillGen has VAT invoice formats for the UAE, Saudi Arabia and Oman on Android. How to set your country rules, issue an invoice, what the Saudi QR code covers, and what BillGen does not do.",
+    lead: "BillGen has invoice formats for the UAE, Saudi Arabia and Oman. You choose your country's rules once, and the app checks each invoice for what that country requires before you issue it.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Set your country rules",
+        steps: [
+          "In Settings, open Company profile and enter your legal name, address, tax number and currency.",
+          "Choose the country rules: UAE, Oman or Saudi Arabia.",
+          "In Settings, open Taxes, add the tax rates you charge and choose the default.",
+          "On each customer, add their tax number if you want it printed on invoices."
+        ]
+      },
+      {
+        title: "Create and issue the invoice",
+        steps: [
+          "Tap New order on the Dashboard, pick a customer and add the line items.",
+          "Create the invoice. With country rules selected, BillGen checks that the invoice has what that country requires before it is issued.",
+          "Open the invoice and choose View PDF, then share or print it."
+        ],
+        after: ["BillGen has tax invoice, simplified invoice and credit note layouts."]
+      },
+      {
+        title: "Saudi Arabia: the QR code",
+        paragraphs: [
+          "Simplified tax invoices made in BillGen carry the QR code that ZATCA asks for in its generation phase (phase 1).",
+          "BillGen does not support the integration phase (phase 2). Sellers already notified for that phase need an approved solution connected to ZATCA."
+        ]
+      },
+      {
+        title: "UAE: getting ready for e-invoicing",
+        paragraphs: ["UAE businesses will send invoices to other businesses as e-invoices through an accredited service provider. You choose and sign up with that provider yourself; BillGen cannot do it for you. Check the UAE Ministry of Finance website for the current dates."],
+        bullets: [
+          "In Company profile, with the UAE country rules, add your Tax Identification Number, city, emirate and trade licence or Emirates ID.",
+          "On each business customer, switch on Business customer and add their TIN, city and emirate.",
+          "On each product, add an HS code for goods or a SAC code for services.",
+          "Open an invoice to see what is still missing. Only AED invoices are supported for now."
+        ]
+      },
+      {
+        title: "Tax report",
+        paragraphs: ["Open Reports to export a tax report as a CSV file, to help prepare your VAT return. BillGen keeps records; it is not tax or financial advice. Check the figures with your accountant before filing."]
+      }
+    ],
+    faq: [
+      ["Does BillGen send invoices to ZATCA or a tax authority?", "No. BillGen creates invoices and PDFs on your phone. It does not submit anything to a tax authority."],
+      ["Does BillGen support Saudi e-invoicing phase 2?", "No. It adds the phase 1 QR code to simplified tax invoices. The integration phase needs an approved solution connected to ZATCA."],
+      ["Can I use BillGen without choosing country rules?", "Yes. There is also a general VAT format."],
+      ["Does it work offline?", "Yes. Your data is stored on your phone, and you can back it up and restore it."]
+    ]
+  },
+  {
+    slug: "gst-invoice-app-india-upi-qr",
+    appSlug: "billgen",
+    title: "Create a GST invoice with a UPI QR code on your phone (India)",
+    h1: "How to create a GST invoice with a UPI QR code on your phone",
+    linkText: "How to create a GST invoice with a UPI QR code",
+    metaDescription: "BillGen for Android has an India invoice format with CGST, SGST and IGST, HSN and SAC codes, and a UPI scan-to-pay QR code on unpaid invoices. How to set it up and issue an invoice.",
+    lead: "BillGen has an India invoice format. It splits tax into CGST and SGST or charges IGST based on the customer's state, prints HSN and SAC codes, and puts a UPI scan-to-pay QR code on unpaid invoices.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Set it up",
+        steps: [
+          "In Settings, open Company profile and enter your legal name, address and tax number, and choose the India country rules.",
+          "Add your UPI ID in the Company profile. It is optional and should look like name@bank.",
+          "In Settings, open Taxes, add the GST rates you charge and choose the default.",
+          "On each product, add the HSN code for goods or the SAC code for services.",
+          "On each customer, enter the State or region. It decides whether tax is split into CGST and SGST or charged as IGST."
+        ]
+      },
+      {
+        title: "Create the invoice",
+        steps: [
+          "Tap New order on the Dashboard, pick a customer and add the line items.",
+          "Create the invoice. With the India rules selected, BillGen checks that it has what is required before it is issued.",
+          "Open the invoice and choose View PDF, then share or print it, or send it by WhatsApp or email."
+        ],
+        after: ["BillGen has tax invoice, bill of supply and credit note layouts. A bill of supply carries no tax lines."]
+      },
+      {
+        title: "The UPI QR code",
+        paragraphs: ["When your company has a UPI ID, unpaid invoices show a QR code with the caption \"Scan to pay with any UPI app\". The customer scans it from the PDF or the printout and pays the amount due. When the money arrives, open the invoice and record the payment with UPI as the method."]
+      },
+      {
+        title: "Tax report",
+        paragraphs: ["Open Reports to export a tax report as a CSV file, to help prepare your GST return. BillGen keeps records; it is not tax or financial advice. Check the figures with your accountant before filing."]
+      }
+    ],
+    faq: [
+      ["Does BillGen file GST returns or generate e-invoices on the government portal?", "No. BillGen creates invoices and PDFs on your phone and can export a tax report as CSV. It does not submit anything to a government portal."],
+      ["Do I need a UPI ID to use BillGen?", "No. The UPI ID is optional. Without it, invoices are issued without the scan-to-pay QR code."],
+      ["Can I issue a bill of supply?", "Yes. BillGen has a bill of supply layout, which carries no tax lines."],
+      ["Is BillGen free?", "The free plan covers one company and up to 3 new invoices a day. Pro is a subscription that removes the limit."]
     ]
   }
 ];

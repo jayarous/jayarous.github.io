@@ -19,7 +19,7 @@ Maintenance owner: Jayarous Antony KS
 BillGen is an Android app for creating professional invoices on your phone, sharing them as PDF and keeping track of who has paid. It has tax-ready invoice formats for the UAE, Saudi Arabia, Oman and India, and it works offline.
 
 - Platform: Android
-- Price: Free to start with a limited number of invoices. Pro removes the limit and unlocks extra features.
+- Price: Free for one company and up to 3 new invoices a day. Pro is a subscription that removes the limit.
 - Category on Google Play: Business
 - Last updated on Google Play: 15 November 2026
 - Made by: Jayarous Antony KS
@@ -79,7 +79,7 @@ Yes. BillGen works offline and stores your data on your phone. You can back it u
 
 ### Is BillGen free?
 
-You can start free with a limited number of invoices. Upgrading to Pro removes the limit and unlocks extra features.
+The free plan covers one company and up to 3 new invoices a day. Pro is a subscription that removes the limit and adds features such as recurring invoices, payment follow-ups and your own logo.
 
 ### Can BillGen share invoices as PDF?
 
@@ -92,5 +92,11 @@ Yes. Saudi invoices made in BillGen carry the required QR code. For India, unpai
 ### Can BillGen help with a VAT or GST return?
 
 BillGen can export a tax report as CSV to help you prepare your VAT or GST return.
+
+Guide: How to make an invoice on your phone and send it as a PDF: https://jayarous.github.io/guides/make-invoice-on-phone-send-pdf/
+
+Guide: How to create a VAT invoice in the UAE, Saudi Arabia or Oman: https://jayarous.github.io/guides/vat-invoice-app-uae-saudi-oman/
+
+Guide: How to create a GST invoice with a UPI QR code: https://jayarous.github.io/guides/gst-invoice-app-india-upi-qr/
 
 Source: the BillGen listing on Google Play (https://play.google.com/store/apps/details?id=com.billgen.app), checked on 17 November 2026.

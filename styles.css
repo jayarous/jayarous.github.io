@@ -368,3 +368,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .guide-list h2 a { text-decoration: none; }
 .guide-list h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .guide-list p { margin-top: 8px; color: var(--muted); }
+.guide-group { margin-top: clamp(40px, 6vw, 64px); }
+.guide-group > .note { margin-top: 10px; }
+.guide-group .guide-list { margin-top: 20px; }
+.guide-list h3 { font-size: var(--step-1); font-weight: 600; letter-spacing: -0.01em; }
+.guide-list h3 a { text-decoration: none; }
+.guide-list h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
