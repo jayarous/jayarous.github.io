@@ -360,3 +360,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .guide-steps { list-style: none; counter-reset: gstep; display: grid; gap: 12px; }
 .guide-steps li { counter-increment: gstep; position: relative; padding-left: 44px; min-height: 30px; }
 .guide-steps li::before { content: counter(gstep); position: absolute; left: 0; top: -2px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--marigold); color: var(--ink); font: 700 0.9375rem/1 var(--display); }
+.guides-heading { margin-top: 32px; }
+.guide-links a { color: var(--pine-deep); font-weight: 600; text-underline-offset: 4px; }
+.guide-list { margin-top: 40px; display: grid; gap: 0; max-width: 46em; border-top: 2px solid var(--ink); }
+.guide-list li { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.guide-list h2 { font-size: var(--step-1); font-weight: 600; letter-spacing: -0.01em; }
+.guide-list h2 a { text-decoration: none; }
+.guide-list h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.guide-list p { margin-top: 8px; color: var(--muted); }

@@ -67,6 +67,7 @@ ${main}
       <span>&copy; 2026 ${esc(OWNER)}</span>
       <nav class="footer-nav" aria-label="Footer">
         <a href="/apps/">Apps</a>
+        <a href="/guides/">Guides</a>
         <a href="/#contact">Contact</a>
         <a href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
@@ -147,7 +148,13 @@ ${app.notes.map((n) => `          <p class="note">${esc(n)}</p>`).join("\n")}
           <dl class="faq">
 ${app.faq.map(([q, a]) => `            <div><dt>${esc(q)}</dt><dd>${esc(a)}</dd></div>`).join("\n")}
           </dl>
-${guides.filter((g) => g.appSlug === app.slug).map((g) => `          <p class="note">Guide: <a href="/guides/${g.slug}/">${esc(g.linkText)}</a></p>`).join("\n")}
+${(() => {
+    const gs = guides.filter((g) => g.appSlug === app.slug);
+    return gs.length ? `          <h3 class="guides-heading">Guides for ${esc(app.name)}</h3>
+          <ul class="ticks guide-links">
+${gs.map((g) => `            <li><a href="/guides/${g.slug}/">${esc(g.linkText)}</a></li>`).join("\n")}
+          </ul>` : "";
+  })()}
           <p class="source-note">These details come from the ${esc(app.name)} listing on Google Play, checked on ${CHECKED_TEXT}. The listing has the current version, screenshots and reviews.</p>
         </section>
 
@@ -318,7 +325,7 @@ function guidePage(g) {
   const main = `    <article class="app guide">
       <div class="wrap">
         <nav class="crumbs" aria-label="Breadcrumb">
-          <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Guide</span>
+          <a href="/">Home</a><span aria-hidden="true">/</span><a href="/guides/">Guides</a><span aria-hidden="true">/</span><span aria-current="page">${esc(g.h1)}</span>
         </nav>
 
         <header class="guide-hero">
@@ -350,6 +357,13 @@ ${g.faq.map(([q, a]) => `            <div><dt>${esc(q)}</dt><dd>${esc(a)}</dd></
           </dl>
           <p class="note">More about the app: <a href="/apps/${app.slug}/">${esc(app.name)} features, privacy and questions</a>.</p>
         </section>
+
+        <section class="app-section">
+          <h2>More guides</h2>
+          <ul class="ticks guide-links">
+${guides.filter((o) => o.slug !== g.slug).map((o) => `            <li><a href="/guides/${o.slug}/">${esc(o.linkText)}</a></li>`).join("\n")}
+          </ul>
+        </section>
       </div>
     </article>`;
 
@@ -368,9 +382,50 @@ ${g.faq.map(([q, a]) => `            <div><dt>${esc(q)}</dt><dd>${esc(a)}</dd></
     description: g.metaDescription,
     urlPath,
     ogImage: icon(app.iconHash, 512),
-    jsonld: [article, crumbs([["Home", "/"], [g.h1, urlPath]])],
+    jsonld: [article, crumbs([["Home", "/"], ["Guides", "/guides/"], [g.h1, urlPath]])],
     main
   });
+}
+
+const guidesLead = `Short how-to guides by ${OWNER} on staying in touch when there is no internet or mobile signal, using Android phones.`;
+
+function guidesHubPage() {
+  const main = `    <section class="section">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Guides</span>
+        </nav>
+        <h1 class="page-title">Guides: staying in touch without internet</h1>
+        <p class="lede">${esc(guidesLead)}</p>
+        <ul class="guide-list">
+${guides.map((g) => `          <li>
+            <h2><a href="/guides/${g.slug}/">${esc(g.linkText)}</a></h2>
+            <p>${esc(g.lead)}</p>
+          </li>`).join("\n")}
+        </ul>
+        <p class="note">These guides use <a href="/apps/airgrid/">AirGrid</a>, an offline chat app for Android.</p>
+      </div>
+    </section>`;
+  const list = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Guides: staying in touch without internet",
+    itemListElement: guides.map((g, i) => ({ "@type": "ListItem", position: i + 1, name: g.h1, url: `${ORIGIN}/guides/${g.slug}/` }))
+  };
+  return shell({
+    title: `Guides to chatting without internet on Android | ${OWNER}`,
+    description: "How-to guides on messaging and talking without internet on Android: offline chat basics, cruises, flights, walkie talkie audio and rider-to-rider talk.",
+    urlPath: "/guides/",
+    jsonld: [list, crumbs([["Home", "/"], ["Guides", "/guides/"]])],
+    main
+  });
+}
+
+function guidesHubMarkdown() {
+  const lines = ["# Guides: staying in touch without internet", "", guidesLead, ""];
+  guides.forEach((g) => lines.push(`- **${g.linkText}:** ${g.lead} ${ORIGIN}/guides/${g.slug}/`));
+  lines.push("", `These guides use AirGrid, an offline chat app for Android: ${ORIGIN}/apps/airgrid/`, "");
+  return lines.join("\n");
 }
 
 function guideMarkdown(g) {
@@ -392,11 +447,12 @@ function guideMarkdown(g) {
 /* ---------- Write the site files ---------- */
 apps.forEach((app) => write(path.join(root, "apps", app.slug, "index.html"), appPage(app)));
 guides.forEach((g) => write(path.join(root, "guides", g.slug, "index.html"), guidePage(g)));
+write(path.join(root, "guides", "index.html"), guidesHubPage());
 write(path.join(root, "apps", "index.html"), hubPage());
 
 const hint1 = `If you are an LLM looking for site information, start at ${ORIGIN}/llms.txt.`;
 const hint2 = `Use ${ORIGIN}/sitemap.md to find the relevant topic and its linked Markdown answer; if it is absent, report that gap.`;
-const urls = ["/", "/apps/", ...apps.map((a) => `/apps/${a.slug}/`), ...guides.map((g) => `/guides/${g.slug}/`)];
+const urls = ["/", "/apps/", ...apps.map((a) => `/apps/${a.slug}/`), "/guides/", ...guides.map((g) => `/guides/${g.slug}/`)];
 
 write(path.join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -419,6 +475,7 @@ const pages = [
   { id: "home", url: `${ORIGIN}/`, title: `${OWNER}: websites, Android apps and custom software`, purpose: "Who Jayarous Antony KS is, what he builds, his work and how to contact him", topic: "services", body: homeMarkdown() },
   { id: "apps", url: `${ORIGIN}/apps/`, title: `Android apps by ${OWNER}`, purpose: "List of the four Android apps with links to each app page and Google Play", topic: "apps", body: hubMarkdown() },
   ...apps.map((a) => ({ id: a.slug, url: `${ORIGIN}/apps/${a.slug}/`, title: a.title, purpose: `What ${a.name} does, price, privacy and common questions`, topic: "apps", body: appMarkdown(a) })),
+  { id: "guides", url: `${ORIGIN}/guides/`, title: "Guides: staying in touch without internet", purpose: "List of how-to guides on chatting and talking without internet on Android", topic: "guides", body: guidesHubMarkdown() },
   ...guides.map((g) => ({ id: g.slug, url: `${ORIGIN}/guides/${g.slug}/`, title: g.title, purpose: `Guide: ${g.linkText}`, topic: "guides", body: guideMarkdown(g) }))
 ];
 pages.forEach((p) => write(path.join(work, "source", `${p.id}.md`), p.body));

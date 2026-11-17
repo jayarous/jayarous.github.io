@@ -95,4 +95,12 @@ Yes. You can send voice notes, photos and files to nearby peers when the local m
 
 Guide: How to chat without internet on Android: https://jayarous.github.io/guides/chat-without-internet-android/
 
+Guide: How to message each other on a cruise without Wi-Fi: https://jayarous.github.io/guides/message-on-cruise-without-wifi/
+
+Guide: How to message someone on the same flight without Wi-Fi: https://jayarous.github.io/guides/message-on-flight-without-wifi/
+
+Guide: A walkie talkie app that works without internet: https://jayarous.github.io/guides/walkie-talkie-app-without-internet/
+
+Guide: How to talk to another rider without mobile signal: https://jayarous.github.io/guides/talk-to-another-rider-without-mobile-signal/
+
 Source: the AirGrid listing on Google Play (https://play.google.com/store/apps/details?id=com.airgrid.app), checked on 17 November 2026.

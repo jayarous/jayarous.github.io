@@ -353,6 +353,174 @@ const guides = [
       ["Does AirGrid work between Android and iPhone?", "AirGrid is an Android app, so it connects Android phones that have it installed."],
       ["Do I need to prepare in advance?", "Yes. Install the app and open it once while you have internet, and make sure the people you want to reach have it too."]
     ]
+  },
+  {
+    slug: "message-on-cruise-without-wifi",
+    appSlug: "airgrid",
+    title: "Message each other on a cruise without Wi-Fi: what works on Android",
+    h1: "How to message each other on a cruise without Wi-Fi",
+    linkText: "How to message each other on a cruise without Wi-Fi",
+    metaDescription: "At sea there is no normal mobile coverage and ship Wi-Fi usually costs extra. Android phones near each other can still message over Bluetooth and Wi-Fi Direct. How to set it up, and the limits on a big ship.",
+    lead: "At sea your phone has no normal mobile coverage, and the ship's Wi-Fi is usually a paid extra. Android phones that are near each other can still exchange messages directly over Bluetooth and Wi-Fi Direct, using an offline chat app installed before you sail.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Why your usual apps stop working",
+        paragraphs: ["Messaging apps need an internet connection. Away from the coast there are no mobile towers, so they only work through the ship's Wi-Fi or a maritime roaming service, and both usually cost extra. Check the prices with your cruise line and your mobile operator before you travel."]
+      },
+      {
+        title: "What works without internet",
+        paragraphs: ["An offline chat app connects phones to each other directly over Bluetooth and Wi-Fi Direct. Nothing leaves the phones, so it works at sea in the same way it works on land. AirGrid is an Android app that does this, and it can pass messages from phone to phone when several people nearby are using it."]
+      },
+      {
+        title: "Before you board",
+        steps: [
+          "Install AirGrid on every Android phone in your group while you still have internet.",
+          "Open it on each phone and allow the permissions it asks for.",
+          "Try it at home with the phones side by side, so everyone knows how it works.",
+          "On board, if you want to avoid roaming charges, switch on airplane mode and then turn Bluetooth and Wi-Fi back on.",
+          "Open AirGrid and use private chat for your own group."
+        ]
+      },
+      {
+        title: "Limits on a ship",
+        bullets: [
+          "Range is short. Bluetooth and Wi-Fi Direct reach people nearby, not across a whole ship, and walls and decks reduce it further.",
+          "Messages can hop between phones running AirGrid, so reach improves when more people around you use it.",
+          "It connects Android phones that have the app installed.",
+          "Agree a meeting place and time as a backup."
+        ]
+      }
+    ],
+    faq: [
+      ["Does Bluetooth chat work at sea?", "Yes. The phones connect to each other directly, so no mobile network or ship Wi-Fi is needed."],
+      ["Will it reach my family in another part of the ship?", "Probably not directly. Range is short and depends on the phones and the surroundings. It works best when you are in the same area, such as the same restaurant, lounge or pool area."],
+      ["Will I be charged for using it?", "AirGrid does not use internet or mobile data. To avoid roaming charges from other apps, keep mobile data off, or use airplane mode with Bluetooth and Wi-Fi turned back on."]
+    ]
+  },
+  {
+    slug: "message-on-flight-without-wifi",
+    appSlug: "airgrid",
+    title: "Message on a flight without Wi-Fi: Bluetooth chat between Android phones",
+    h1: "How to message someone on the same flight without Wi-Fi",
+    linkText: "How to message someone on the same flight without Wi-Fi",
+    metaDescription: "Seated apart on a flight? Android phones can message each other over Bluetooth and Wi-Fi Direct with no in-flight Wi-Fi. What to set up before you fly, airline rules to check, and the limits.",
+    lead: "If your group is seated apart on a flight, Android phones can message each other directly over Bluetooth and Wi-Fi Direct. Nothing goes through the internet, so it works without in-flight Wi-Fi.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Is it allowed?",
+        paragraphs: ["Airplane mode switches off the mobile connection. On Android you can turn Bluetooth and Wi-Fi back on while airplane mode stays on. Many airlines allow Bluetooth during the flight, but rules differ, so check your airline's policy and always follow the crew's instructions."]
+      },
+      {
+        title: "Before you fly",
+        steps: [
+          "Install AirGrid on each Android phone while you have internet.",
+          "Open it and allow the permissions it asks for.",
+          "Test it together before you leave for the airport.",
+          "On the plane, switch on airplane mode, then turn Bluetooth and Wi-Fi back on.",
+          "Open AirGrid and use private chat to message the people you are travelling with."
+        ]
+      },
+      {
+        title: "Limits to know",
+        bullets: [
+          "Range is short and varies with the phones and the surroundings, so it may not reach from one end of a large aircraft to the other.",
+          "Public nearby chat reaches everyone connected to the same local mesh. Use private chat for your own group.",
+          "It connects Android phones that have the app installed."
+        ]
+      }
+    ],
+    faq: [
+      ["Can I use Bluetooth in airplane mode?", "On Android, yes: switch on airplane mode, then turn Bluetooth back on. Whether you may use it during the flight depends on the airline, so check its policy."],
+      ["Does it need in-flight Wi-Fi?", "No. Messages go directly from phone to phone, so no in-flight Wi-Fi or internet is used."],
+      ["Can I message someone who has an iPhone?", "AirGrid is an Android app, so it connects Android phones that have it installed."]
+    ]
+  },
+  {
+    slug: "walkie-talkie-app-without-internet",
+    appSlug: "airgrid",
+    title: "Walkie talkie app without internet for Android: how AirGrid does it",
+    h1: "A walkie talkie app that works without internet",
+    linkText: "A walkie talkie app that works without internet",
+    metaDescription: "Many walkie talkie apps need an internet connection. AirGrid sends voice directly between nearby Android phones over Bluetooth and Wi-Fi Direct. What it offers, how to set it up, and how it compares with a radio.",
+    lead: "Many walkie talkie apps send your voice over the internet, so they stop when the signal does. AirGrid sends voice directly between nearby Android phones over Bluetooth and Wi-Fi Direct, so it keeps working with no internet or mobile data.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Three ways to talk",
+        bullets: [
+          "Walkie clips: send short voice clips to everyone on the local mesh, or start an invited private walkie session with one person.",
+          "Rider Mode: a live one-to-one audio session with a trusted contact, with mute controls and a voice-activated microphone.",
+          "Voice notes: record a message and send it in a chat."
+        ]
+      },
+      {
+        title: "Set it up",
+        steps: [
+          "Install AirGrid from Google Play on each Android phone while you are online.",
+          "Open it and allow the permissions it asks for, including the microphone.",
+          "When you are near each other, open AirGrid so the phones discover each other.",
+          "Mark the people you trust as trusted contacts to use private walkie and Rider Mode with them."
+        ]
+      },
+      {
+        title: "How it compares with a radio",
+        bullets: [
+          "A dedicated two-way radio reaches much further. AirGrid is for people close by.",
+          "Range depends on the phones, the Android version, distance, radio conditions and the number of people nearby.",
+          "It needs no extra hardware: only Android phones with the app installed."
+        ]
+      }
+    ],
+    faq: [
+      ["Does AirGrid's walkie talkie need internet?", "No. Voice goes directly between nearby phones over Bluetooth and Wi-Fi Direct."],
+      ["Can a whole group hear me?", "Walkie clips can go to everyone on the local mesh. Private walkie sessions and Rider Mode are with one selected person."],
+      ["How far does it reach?", "It varies. Performance depends on the phones, the Android version, distance, radio conditions and how many people are nearby."]
+    ]
+  },
+  {
+    slug: "talk-to-another-rider-without-mobile-signal",
+    appSlug: "airgrid",
+    title: "Rider to rider talk without mobile signal: AirGrid Rider Mode on Android",
+    h1: "How to talk to another rider without mobile signal",
+    linkText: "How to talk to another rider without mobile signal",
+    metaDescription: "On rides through remote roads the mobile signal comes and goes. AirGrid's Rider Mode links two Android phones for live audio over Bluetooth and Wi-Fi Direct. Set-up steps, limits and safety.",
+    lead: "On rides through hills and remote roads the mobile signal comes and goes. AirGrid's Rider Mode gives two Android phones a live audio link over Bluetooth and Wi-Fi Direct, with no internet or mobile data.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "What Rider Mode is",
+        paragraphs: ["Rider Mode is a trusted one-to-one live audio session. It has mute controls and a voice-activated microphone, so you do not need to press a button to talk. It is built for close-range coordination between two people."]
+      },
+      {
+        title: "Set it up before the ride",
+        steps: [
+          "Install AirGrid on both Android phones while you have internet.",
+          "Meet up and open AirGrid on both phones so they discover each other.",
+          "Mark each other as trusted contacts.",
+          "Start a Rider Mode session.",
+          "Test it with your helmet and headset before you set off, because audio setups differ."
+        ]
+      },
+      {
+        title: "Limits and safety",
+        bullets: [
+          "Rider Mode is one-to-one, not a group channel.",
+          "It works at close range. Performance varies with the phones, the Android version, distance and radio conditions, so expect it to drop when you ride far apart.",
+          "Set everything up while stopped. Do not handle your phone while riding, and follow your local road rules."
+        ]
+      }
+    ],
+    faq: [
+      ["Does Rider Mode need internet?", "No. The audio goes directly between the two phones over Bluetooth and Wi-Fi Direct."],
+      ["Can more than two riders join?", "Rider Mode is one-to-one. For a group, short walkie clips can be sent to everyone on the local mesh."],
+      ["Will it work with my helmet headset?", "It depends on your phone and headset. Try it before the ride."]
+    ]
   }
 ];
 
