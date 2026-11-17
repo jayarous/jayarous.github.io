@@ -1,6 +1,6 @@
-# Game Mode Pro: game mode and FPS overlay for Android
+# Game Mode Pro: gaming HUD and game mode for Android
 
-Canonical: [Game Mode Pro: game mode and FPS overlay for Android](https://jayarous.github.io/apps/game-mode-pro/)
+Canonical: [Game Mode Pro: gaming HUD and game mode for Android](https://jayarous.github.io/apps/game-mode-pro/)
 
 Locale: en
 
@@ -14,12 +14,12 @@ Maintenance owner: Jayarous Antony KS
 
 [Topic map](https://jayarous.github.io/llm/topics/apps.md) · [Complete scoped map](https://jayarous.github.io/sitemap.md)
 
-# Game Mode Pro, a gaming companion with a live FPS and ping overlay
+# Game Mode Pro, a gaming HUD and toolkit for Android
 
-Game Mode Pro is an Android app for more focused gaming sessions. It starts a session when you open a game, shows FPS, network ping and battery level in a small floating overlay, and keeps notifications and accidental touches out of the way.
+Game Mode Pro is a game mode and gaming HUD for Android. A small floating overlay shows estimated FPS and warns you when the phone runs hot or the battery runs low, and quick tools keep notifications and accidental touches out of the way.
 
 - Platform: Android
-- Price: Free to install. A Basic or Pro subscription unlocks the full toolset and includes a 7-day free trial.
+- Price: Free to install. Pro is a subscription with weekly, monthly and yearly plans that adds the full HUD, auto-detect and unlimited session history.
 - Category on Google Play: Tools
 - Last updated on Google Play: 14 November 2026
 - Made by: Jayarous Antony KS
@@ -29,20 +29,29 @@ Game Mode Pro is an Android app for more focused gaming sessions. It starts a se
 
 ### During a game
 
-- **Automatic game detection:** Add your games to the library and a session starts the moment you launch one, with no manual switching.
-- **Live performance overlay:** A lightweight floating overlay shows FPS, network ping and battery level in real time.
-- **Focus tools:** Silence notifications during a session and lock accidental touches.
-- **Quick tools:** One-tap access from the overlay to a memory optimizer, screenshots, screen recording and other session utilities, without leaving the game.
+- **Floating HUD:** A bubble floats over your game and opens into a HUD. It shows estimated FPS, read from your screen's refresh signal rather than reported by the game.
+- **Alerts:** A banner, with optional vibration, when temperature or battery goes into the red.
+- **Quick tools:** Touch lock, a Do Not Disturb switch, a brightness slider, screenshots and screen recording. Recordings are video only, with no sound.
+- **Refresh rate profiles:** The Performance profile sets the screen to its highest refresh rate and Battery Saver sets 60 Hz. This needs the free Shizuku app, and not every phone allows it.
 
-### After a game
+### Around a game
 
-- **Session history:** Review past sessions and settings. They are stored on your device.
+- **Game library and widget:** Game Mode Pro finds the games on your phone. Start one from the app, a home screen shortcut or the widget.
+- **Session reports:** Each session gets a plain-English summary and a list of alerts. The free plan keeps your last 5 sessions for 3 days.
+- **Network check:** Test your connection before you play.
+
+### With Pro
+
+- **Full HUD:** RAM, battery, thermal headroom and Wi-Fi ping in the HUD, FPS and ping alerts, and the Gauges style.
+- **Auto-detect:** A session and the HUD start when you open a game from your library.
+- **Full history and reports:** Unlimited session history, timelines, network details, all tips and report sharing.
+- **AI explanations:** Optional explanations of a session report, using your own AI key. They are off until you set them up.
 
 ## Who Game Mode Pro is for
 
-- Players who want to see frame rate while they play
-- Players who want to watch their connection quality
-- Anyone who wants a distraction-free way to play on Android
+- Players who want to see how their phone is coping while they play
+- Players who want a touch lock, a Do Not Disturb switch and a recorder one tap away
+- Players with a 90 Hz or 120 Hz screen who want to set the refresh rate for each game
 
 ## How Game Mode Pro handles your data
 
@@ -52,24 +61,38 @@ Game Mode Pro is an Android app for more focused gaming sessions. It starts a se
 
 ## Questions about Game Mode Pro
 
-### What does the Game Mode Pro overlay show?
+### What does the Game Mode Pro HUD show?
 
-FPS, network ping and battery level, updated in real time while you play.
+The free HUD shows estimated FPS, and temperature and battery alerts are free too. Pro adds RAM, battery, thermal headroom and Wi-Fi ping to the HUD.
+
+### Is the FPS number the game's real frame rate?
+
+No. It is an estimate read from your screen's refresh signal, not a number reported by the game.
+
+### Does Game Mode Pro make games run faster?
+
+No. It does not change CPU or GPU speeds. It shows how your phone is coping, removes distractions and, on phones that allow it, sets the screen refresh rate.
 
 ### Does Game Mode Pro start automatically when I open a game?
 
-Yes. Add a game to your library and Game Mode Pro starts a session when you launch it.
+With Pro, yes: auto-detect starts a session and the HUD when you open a game from your library. On the free plan you start a game from the app, a home screen shortcut or the widget.
 
 ### Is Game Mode Pro free?
 
-It is free to install. The full toolset needs a Basic or Pro subscription, which includes a 7-day free trial and can be cancelled at any time through Google Play.
+It is free to install, with no ads. Pro is a subscription with weekly, monthly and yearly plans. The upgrade screen shows the current price and any free trial.
 
 ### Does Game Mode Pro show ads or collect analytics?
 
 No. Game Mode Pro contains no ads and no third-party analytics, and your session and settings data stays on your device.
 
-### Can I take screenshots or record the screen from Game Mode Pro?
+### Can I record the screen with Game Mode Pro?
 
-Yes. Screenshot and screen recording are among the one-tap quick tools in the overlay.
+Yes, at 720p, 1080p or native resolution. Recordings are video only, with no sound.
+
+Guide: How to show a HUD overlay over your games: https://jayarous.github.io/guides/gaming-hud-overlay-android/
+
+Guide: How to set 120 Hz for games without root: https://jayarous.github.io/guides/set-120hz-refresh-rate-for-games-android/
+
+Guide: How to stop accidental touches and notifications while gaming: https://jayarous.github.io/guides/stop-accidental-touches-notifications-while-gaming/
 
 Source: the Game Mode Pro listing on Google Play (https://play.google.com/store/apps/details?id=com.gamemodepro.app), checked on 17 November 2026.

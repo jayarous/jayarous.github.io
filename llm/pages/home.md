@@ -30,7 +30,7 @@ Work is available for individuals (personal sites, hobby projects, small scopes)
 
 - **Sebry** (Android app): Medication reminders, schedules and family health profiles in one app. Your data stays on your phone. https://jayarous.github.io/apps/sebry/
 - **BillGen** (Android app): Invoicing for small businesses and freelancers: GST and VAT invoices, payment tracking and PDF sharing. Works offline. https://jayarous.github.io/apps/billgen/
-- **Game Mode Pro** (Android app): Starts a game session automatically, shows live FPS, ping and battery, and silences distractions while you play. https://jayarous.github.io/apps/game-mode-pro/
+- **Game Mode Pro** (Android app): A floating HUD with estimated FPS and alerts for heat and low battery, plus touch lock, screen recording and refresh rate profiles. https://jayarous.github.io/apps/game-mode-pro/
 - **AirGrid** (Android app): Chat with nearby Android phones over Bluetooth and Wi-Fi Direct, with no internet or mobile data. https://jayarous.github.io/apps/airgrid/
 - **GemBiz** (company work): an app built for GemBiz.
 - **Christeyns** (company work): an app and an internal system built for the Christeyns team.

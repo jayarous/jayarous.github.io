@@ -165,35 +165,46 @@ const apps = [
     pkg: "com.gamemodepro.app",
     name: "Game Mode Pro",
     iconHash: "bctjJTcwcvqskIs0uzSkbZ8t21dJBvCKivc8XhHOxveSJUuFiUaLmc0OpapVyAQkP00cWg_UwoR5Lp9hDi9PIg",
-    title: "Game Mode Pro: game mode and FPS overlay for Android",
-    h1: "Game Mode Pro, a gaming companion with a live FPS and ping overlay",
-    cardSummary: "Starts a game session automatically, shows live FPS, ping and battery, and silences distractions while you play.",
-    metaDescription: "Game Mode Pro is an Android app that starts a game session automatically, shows FPS, ping and battery in a floating overlay, and silences notifications. No ads. Free to install on Google Play.",
-    lead: "Game Mode Pro is an Android app for more focused gaming sessions. It starts a session when you open a game, shows FPS, network ping and battery level in a small floating overlay, and keeps notifications and accidental touches out of the way.",
+    title: "Game Mode Pro: gaming HUD and game mode for Android",
+    h1: "Game Mode Pro, a gaming HUD and toolkit for Android",
+    cardSummary: "A floating HUD with estimated FPS and alerts for heat and low battery, plus touch lock, screen recording and refresh rate profiles.",
+    metaDescription: "Game Mode Pro is a gaming HUD for Android: a floating overlay with estimated FPS, temperature and battery alerts, touch lock, screen recording and refresh rate profiles. No ads.",
+    lead: "Game Mode Pro is a game mode and gaming HUD for Android. A small floating overlay shows estimated FPS and warns you when the phone runs hot or the battery runs low, and quick tools keep notifications and accidental touches out of the way.",
     storeCategory: "Tools",
     schemaCategory: "UtilitiesApplication",
-    price: "Free to install. A Basic or Pro subscription unlocks the full toolset and includes a 7-day free trial.",
+    price: "Free to install. Pro is a subscription with weekly, monthly and yearly plans that adds the full HUD, auto-detect and unlimited session history.",
     updated: "14 November 2026",
     audienceTitle: "Who Game Mode Pro is for",
     audience: [
-      "Players who want to see frame rate while they play",
-      "Players who want to watch their connection quality",
-      "Anyone who wants a distraction-free way to play on Android"
+      "Players who want to see how their phone is coping while they play",
+      "Players who want a touch lock, a Do Not Disturb switch and a recorder one tap away",
+      "Players with a 90 Hz or 120 Hz screen who want to set the refresh rate for each game"
     ],
     groups: [
       {
         title: "During a game",
         items: [
-          ["Automatic game detection", "Add your games to the library and a session starts the moment you launch one, with no manual switching."],
-          ["Live performance overlay", "A lightweight floating overlay shows FPS, network ping and battery level in real time."],
-          ["Focus tools", "Silence notifications during a session and lock accidental touches."],
-          ["Quick tools", "One-tap access from the overlay to a memory optimizer, screenshots, screen recording and other session utilities, without leaving the game."]
+          ["Floating HUD", "A bubble floats over your game and opens into a HUD. It shows estimated FPS, read from your screen's refresh signal rather than reported by the game."],
+          ["Alerts", "A banner, with optional vibration, when temperature or battery goes into the red."],
+          ["Quick tools", "Touch lock, a Do Not Disturb switch, a brightness slider, screenshots and screen recording. Recordings are video only, with no sound."],
+          ["Refresh rate profiles", "The Performance profile sets the screen to its highest refresh rate and Battery Saver sets 60 Hz. This needs the free Shizuku app, and not every phone allows it."]
         ]
       },
       {
-        title: "After a game",
+        title: "Around a game",
         items: [
-          ["Session history", "Review past sessions and settings. They are stored on your device."]
+          ["Game library and widget", "Game Mode Pro finds the games on your phone. Start one from the app, a home screen shortcut or the widget."],
+          ["Session reports", "Each session gets a plain-English summary and a list of alerts. The free plan keeps your last 5 sessions for 3 days."],
+          ["Network check", "Test your connection before you play."]
+        ]
+      },
+      {
+        title: "With Pro",
+        items: [
+          ["Full HUD", "RAM, battery, thermal headroom and Wi-Fi ping in the HUD, FPS and ping alerts, and the Gauges style."],
+          ["Auto-detect", "A session and the HUD start when you open a game from your library."],
+          ["Full history and reports", "Unlimited session history, timelines, network details, all tips and report sharing."],
+          ["AI explanations", "Optional explanations of a session report, using your own AI key. They are off until you set them up."]
         ]
       }
     ],
@@ -205,11 +216,13 @@ const apps = [
     ],
     notes: [],
     faq: [
-      ["What does the Game Mode Pro overlay show?", "FPS, network ping and battery level, updated in real time while you play."],
-      ["Does Game Mode Pro start automatically when I open a game?", "Yes. Add a game to your library and Game Mode Pro starts a session when you launch it."],
-      ["Is Game Mode Pro free?", "It is free to install. The full toolset needs a Basic or Pro subscription, which includes a 7-day free trial and can be cancelled at any time through Google Play."],
+      ["What does the Game Mode Pro HUD show?", "The free HUD shows estimated FPS, and temperature and battery alerts are free too. Pro adds RAM, battery, thermal headroom and Wi-Fi ping to the HUD."],
+      ["Is the FPS number the game's real frame rate?", "No. It is an estimate read from your screen's refresh signal, not a number reported by the game."],
+      ["Does Game Mode Pro make games run faster?", "No. It does not change CPU or GPU speeds. It shows how your phone is coping, removes distractions and, on phones that allow it, sets the screen refresh rate."],
+      ["Does Game Mode Pro start automatically when I open a game?", "With Pro, yes: auto-detect starts a session and the HUD when you open a game from your library. On the free plan you start a game from the app, a home screen shortcut or the widget."],
+      ["Is Game Mode Pro free?", "It is free to install, with no ads. Pro is a subscription with weekly, monthly and yearly plans. The upgrade screen shows the current price and any free trial."],
       ["Does Game Mode Pro show ads or collect analytics?", "No. Game Mode Pro contains no ads and no third-party analytics, and your session and settings data stays on your device."],
-      ["Can I take screenshots or record the screen from Game Mode Pro?", "Yes. Screenshot and screen recording are among the one-tap quick tools in the overlay."]
+      ["Can I record the screen with Game Mode Pro?", "Yes, at 720p, 1080p or native resolution. Recordings are video only, with no sound."]
     ]
   },
   {
@@ -689,6 +702,155 @@ const guides = [
       ["Do I need a UPI ID to use BillGen?", "No. The UPI ID is optional. Without it, invoices are issued without the scan-to-pay QR code."],
       ["Can I issue a bill of supply?", "Yes. BillGen has a bill of supply layout, which carries no tax lines."],
       ["Is BillGen free?", "The free plan covers one company and up to 3 new invoices a day. Pro is a subscription that removes the limit."]
+    ]
+  },
+  {
+    slug: "gaming-hud-overlay-android",
+    appSlug: "game-mode-pro",
+    title: "How to show a HUD overlay over your games on Android",
+    h1: "How to show a HUD overlay over your games on Android",
+    linkText: "How to show a HUD overlay over your games",
+    metaDescription: "Game Mode Pro for Android floats a small HUD over your game with estimated FPS and alerts for heat and low battery. How to set it up, and what each number means.",
+    lead: "Game Mode Pro floats a small bubble over your game that opens into a HUD. It shows estimated FPS and warns you when the phone runs hot or the battery runs low.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Set it up",
+        steps: [
+          "Install Game Mode Pro from Google Play and open it.",
+          "On the setup screen, grant Display over other apps. It is the only access the app requires. The other three can be added later.",
+          "Open the Tools tab and turn on Overlay HUD.",
+          "On Android 13 or later, allow notifications when the app asks.",
+          "Open your game. The bubble stays on top of it. Drag the bubble to move it, and open it to see the full HUD."
+        ]
+      },
+      {
+        title: "What the numbers mean",
+        bullets: [
+          "FPS (est.): an estimate read from your screen's refresh signal. It is not a number reported by the game, so treat it as a guide.",
+          "BAT and TEMP: battery level and battery temperature.",
+          "THR: thermal headroom, which shows how close the phone is to slowing itself down to cool off. It needs Android 11 or later.",
+          "RAM: memory in use.",
+          "PING: the time it takes to reach a public internet server over Wi-Fi, in milliseconds. It is not the ping to your game's server, and it shows a dash on mobile data."
+        ],
+        after: ["The free HUD shows estimated FPS. RAM, battery, thermal headroom and ping in the HUD are part of Pro."]
+      },
+      {
+        title: "Alerts",
+        paragraphs: ["Turn on HUD alerts in the Tools tab to get a banner when a value goes into the red, with a vibration if you want one. Temperature and battery alerts are free. FPS and ping alerts are part of Pro."]
+      },
+      {
+        title: "Start the HUD with the game",
+        paragraphs: ["A home screen shortcut or the Game Mode Pro widget opens the game and the HUD together. To make a shortcut, open the Games tab and use the add-to-home-screen button on the game's card. With Pro, Auto-detect games in the Tools tab starts a session and the HUD whenever you open a game from your library. Auto-detect needs Usage access."]
+      }
+    ],
+    faq: [
+      ["Is the FPS number accurate?", "It is an estimate from your screen's refresh signal, so it follows what the display is doing rather than the game's internal frame rate."],
+      ["Does the HUD need root?", "No. It needs the Display over other apps permission only."],
+      ["Does the HUD work on mobile data?", "Yes. Only the ping reading needs Wi-Fi."],
+      ["Does Game Mode Pro make games run faster?", "No. It does not change CPU or GPU speeds."],
+      ["Is the HUD free?", "The HUD with estimated FPS and the temperature and battery alerts are free. Pro is a subscription that adds the other readings."]
+    ]
+  },
+  {
+    slug: "set-120hz-refresh-rate-for-games-android",
+    appSlug: "game-mode-pro",
+    title: "How to set 120 Hz for games on Android without root",
+    h1: "How to set a 120 Hz refresh rate for games on Android without root",
+    linkText: "How to set 120 Hz for games without root",
+    metaDescription: "Game Mode Pro can switch an Android screen to its highest refresh rate when a game starts and restore your setting afterwards, using the free Shizuku app instead of root. Setup steps and limits.",
+    lead: "Game Mode Pro can switch your screen to its highest refresh rate when a game session starts and put your own setting back when it ends. It uses the free Shizuku app instead of root, and not every phone allows it.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "What you need",
+        bullets: [
+          "A phone with a 90 Hz, 120 Hz or faster screen.",
+          "Game Mode Pro, free on Google Play.",
+          "Shizuku, a free app that lets other apps use system settings you approve, without root."
+        ]
+      },
+      {
+        title: "Set it up",
+        steps: [
+          "In Game Mode Pro, open the Tools tab and find the Refresh Rate Control card.",
+          "Tap Get Shizuku and install it.",
+          "Tap Open Shizuku and start its service, following the instructions inside Shizuku.",
+          "Back in Game Mode Pro, tap Grant and allow access when Shizuku asks.",
+          "Tap Enable. This is a one-time grant.",
+          "The card now reads \"Refresh-rate control active\"."
+        ]
+      },
+      {
+        title: "Choose a profile for each game",
+        steps: [
+          "Open the Games tab.",
+          "On a game's card, tap the profile name and choose Performance, Balanced or Battery Saver."
+        ],
+        after: [
+          "Performance sets the highest refresh rate your screen supports. Battery Saver sets 60 Hz. Balanced leaves your setting as it is.",
+          "The profile applies when a session for that game starts. When the session ends, Game Mode Pro restores the setting you had before."
+        ]
+      },
+      {
+        title: "Limits",
+        paragraphs: [
+          "Refresh rate control changes Android's own display settings. Some phones and Android versions refuse the change, and Android 16 may reject the peak refresh setting. If nothing changes on your phone, the app cannot force it.",
+          "A higher refresh rate does not make a game draw more frames. A game that is capped at 60 frames per second stays at 60."
+        ]
+      }
+    ],
+    faq: [
+      ["Does this need root?", "No. It uses Shizuku, which works without root."],
+      ["Is refresh rate control free?", "Yes. Refresh rate profiles are in the free plan."],
+      ["Will 120 Hz make my game run at 120 FPS?", "Only if the game itself can render that many frames. The profile sets the screen's refresh rate, not the game's frame rate."],
+      ["Does it work on Samsung phones?", "Game Mode Pro uses Samsung's refresh rate setting on Samsung phones and Android's standard setting on others. Whether the change is accepted depends on the phone and the Android version."]
+    ]
+  },
+  {
+    slug: "stop-accidental-touches-notifications-while-gaming",
+    appSlug: "game-mode-pro",
+    title: "How to stop accidental touches and notifications while gaming on Android",
+    h1: "How to stop accidental touches and notifications while gaming on Android",
+    linkText: "How to stop accidental touches and notifications while gaming",
+    metaDescription: "Game Mode Pro for Android puts a touch lock and a Do Not Disturb switch in a floating HUD. How to lock the screen against stray touches and silence notifications without leaving your game.",
+    lead: "Game Mode Pro puts a touch lock and a Do Not Disturb switch in a floating HUD, so you can block stray touches and silence notifications without leaving your game.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Lock the screen against touches",
+        steps: [
+          "In Game Mode Pro, open the Tools tab and turn on Overlay HUD, then open your game.",
+          "Open the HUD from the bubble and tap Lock.",
+          "The screen now ignores touches. To unlock it, hold the lock icon for about a second and a half."
+        ],
+        after: ["Touch lock helps when a game plays by itself for a while, or during a cutscene or a loading screen."]
+      },
+      {
+        title: "Silence notifications",
+        steps: [
+          "Grant Do Not Disturb access. Game Mode Pro asks for it on the setup screen, and the Tools tab shows a Grant DND button until you do.",
+          "Tap DND in the HUD, or in Quick Controls on the Tools tab."
+        ],
+        after: ["DND switches Android's Do Not Disturb to priority only, so only the interruptions you allow in Android's Do Not Disturb settings come through. It is a switch, not a timer. Tap DND again to turn it off when you finish playing."]
+      },
+      {
+        title: "Set the brightness",
+        paragraphs: ["Quick Controls also has a brightness slider. It needs the Modify system settings access. Moving the slider turns adaptive brightness off, and the Auto toggle turns it back on."]
+      },
+      {
+        title: "Screenshots and recording",
+        paragraphs: ["Tap Shot in the HUD to save a screenshot to the Game Mode Pro folder in Pictures. The bubble hides itself while the picture is taken. Recordings are saved to the Game Mode Pro folder in Movies at 720p, 1080p or native resolution, as video only with no sound. Android asks for permission each time you capture the screen. Starting a recording from the HUD is part of Pro."]
+      }
+    ],
+    faq: [
+      ["Are touch lock and Do Not Disturb free?", "Yes. Touch lock, the Do Not Disturb switch, the brightness slider and screenshots are in the free plan."],
+      ["Does Game Mode Pro turn Do Not Disturb off when I stop playing?", "No. You turn it off yourself with the same DND switch."],
+      ["How do I unlock the screen after a touch lock?", "Hold the lock icon for about a second and a half."],
+      ["Do recordings include sound?", "No. Recordings are video only."]
     ]
   }
 ];
