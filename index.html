@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jayarous Antony KS | Websites, apps and software</title>
+  <meta name="description" content="Jayarous Antony KS builds websites, apps and custom software for people and small companies. Tell me what you need in plain words and I will build it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" data-fill="name">Jayarous Antony KS</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#services">What I build</a>
+        <a href="#work">Work</a>
+        <a href="#process">How it works</a>
+        <a class="nav-cta" href="#contact">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Tell me what you need. I&rsquo;ll build it.</h1>
+          <p class="lede">
+            I&rsquo;m <span data-fill="name">Jayarous Antony KS</span>. I make websites, apps and custom software
+            for people and small companies. You describe it in plain words, and you get
+            a working version to try early, not a long document.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Start a project</a>
+            <a class="btn btn-quiet" href="#work">See my work</a>
+          </div>
+        </div>
+
+        <div class="demo" aria-label="Examples of a request and what gets built">
+          <div class="demo-tabs" role="tablist" aria-label="Pick an example">
+            <button role="tab" id="tab-site" aria-controls="demo-panel" aria-selected="true" data-demo="site">A website</button>
+            <button role="tab" id="tab-app" aria-controls="demo-panel" aria-selected="false" tabindex="-1" data-demo="app">An app</button>
+            <button role="tab" id="tab-tool" aria-controls="demo-panel" aria-selected="false" tabindex="-1" data-demo="tool">A business tool</button>
+          </div>
+
+          <div class="demo-panel" id="demo-panel" role="tabpanel" aria-labelledby="tab-site">
+            <div class="brief">
+              <span class="brief-who">You say</span>
+              <p class="brief-text" id="brief-text" aria-live="polite"></p>
+            </div>
+
+            <div class="build" id="build">
+              <span class="build-who">I build</span>
+
+              <!-- Website mock -->
+              <div class="mock mock-site" data-mock="site">
+                <div class="mock-bar"><i></i><i></i><i></i><span>goldencrust.example</span></div>
+                <div class="mock-body">
+                  <div class="piece site-nav-row"><b>Golden Crust</b><span>Menu</span><span>Visit</span></div>
+                  <div class="piece site-hero">
+                    <div>
+                      <strong>Fresh bread, out of the oven at 5am</strong>
+                      <em>Order for pickup</em>
+                    </div>
+                    <div class="site-photo" aria-hidden="true"></div>
+                  </div>
+                  <div class="piece site-row">
+                    <div><b>Sourdough</b><span>Daily</span></div>
+                    <div><b>Croissants</b><span>Until 11</span></div>
+                    <div><b>Cakes</b><span>To order</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- App mock -->
+              <div class="mock mock-app" data-mock="app" hidden>
+                <div class="phone">
+                  <div class="piece app-top"><b>This month</b><strong>1,240</strong><span>of 2,000 budget</span></div>
+                  <div class="piece app-meter"><i style="width:62%"></i></div>
+                  <ul class="piece app-list">
+                    <li><span>Groceries</span><b>86</b></li>
+                    <li><span>School bus</span><b>120</b></li>
+                    <li><span>Electricity</span><b>210</b></li>
+                  </ul>
+                  <div class="piece app-add">Add expense</div>
+                </div>
+              </div>
+
+              <!-- Tool mock -->
+              <div class="mock mock-tool" data-mock="tool" hidden>
+                <div class="mock-bar"><i></i><i></i><i></i><span>Invoices</span></div>
+                <div class="mock-body">
+                  <div class="piece tool-head"><b>Invoices</b><em>New invoice</em></div>
+                  <table class="piece tool-table">
+                    <thead><tr><th>Client</th><th>Amount</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td>Al Noor Trading</td><td>3,400</td><td><span class="pill paid">Paid</span></td></tr>
+                      <tr><td>Bright Dental</td><td>1,150</td><td><span class="pill due">Due Friday</span></td></tr>
+                      <tr><td>Maple Interiors</td><td>6,800</td><td><span class="pill late">Reminder sent</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <h2>What I build</h2>
+        <div class="services">
+          <article class="service">
+            <h3>Websites</h3>
+            <p>A site that explains what you do and makes it easy to call, book or buy. It loads fast and reads well on a phone.</p>
+            <ul>
+              <li>Company and portfolio sites</li>
+              <li>Booking and enquiry pages</li>
+              <li>Small online shops</li>
+            </ul>
+          </article>
+          <article class="service">
+            <h3>Apps</h3>
+            <p>An app for the thing you keep doing by hand, built for the phone or the browser and shaped around how you already work.</p>
+            <ul>
+              <li>Trackers and planners</li>
+              <li>Customer and member apps</li>
+              <li>Personal tools for you or your family</li>
+            </ul>
+          </article>
+          <article class="service">
+            <h3>Software</h3>
+            <p>Custom tools that replace the spreadsheet, the paper form or the copy-and-paste routine your team repeats every week.</p>
+            <ul>
+              <li>Quotes, invoices and stock</li>
+              <li>Dashboards and reports</li>
+              <li>Automations between the tools you use</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="audience">
+          <div>
+            <h3>For yourself</h3>
+            <p>A personal site, a hobby project or an idea you have wanted to try. Small budgets and small scopes are welcome.</p>
+          </div>
+          <div>
+            <h3>For your company</h3>
+            <p>Shops, clinics, agencies and service businesses that need something built properly without hiring a full agency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="work">
+      <div class="wrap">
+        <h2>Work</h2>
+        <p class="section-intro">
+          My own apps on Google Play, and work I have built for companies.
+          <a id="link-play" href="#" target="_blank" rel="noopener" hidden>See all my apps on Google Play</a>
+        </p>
+        <div class="projects" id="projects"></div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li>
+            <h3>You tell me what you need</h3>
+            <p>A message or a short call is enough. No technical words required.</p>
+          </li>
+          <li>
+            <h3>I send a price and a plan</h3>
+            <p>You know what you are getting, what it costs and when, before any work starts.</p>
+          </li>
+          <li>
+            <h3>You try a working version</h3>
+            <p>You click through the real thing early and tell me what to change.</p>
+          </li>
+          <li>
+            <h3>It goes live, and I stay around</h3>
+            <p>I put it online, show you how to use it and fix things that come up.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <h2>Start a project</h2>
+          <p>Describe what you have in mind, even if it is only a rough idea. I reply to every message.</p>
+          <div class="contact-links">
+            <a class="btn btn-whatsapp" id="link-whatsapp" href="#" target="_blank" rel="noopener" hidden>Chat on WhatsApp</a>
+            <a class="btn btn-quiet" id="link-email" href="#" hidden>Send an email</a>
+          </div>
+          <ul class="socials" id="socials" aria-label="Social profiles"></ul>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-contact">Email or phone</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-kind">What do you need?</label>
+            <select id="f-kind" name="kind">
+              <option>A website</option>
+              <option>An app</option>
+              <option>Software for my business</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-message">Tell me about it</label>
+            <textarea id="f-message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span><span data-fill="name">Jayarous Antony KS</span><span id="footer-location"></span></span>
+      <span>&copy; <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <script src="site.config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
