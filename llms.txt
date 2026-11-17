@@ -14,4 +14,5 @@ Use that document's cited sources and canonical page; if the requested informati
 ## Topics
 
 - [apps](https://jayarous.github.io/llm/topics/apps.md): All public apps documents in this inventory.
+- [guides](https://jayarous.github.io/llm/topics/guides.md): All public guides documents in this inventory.
 - [services](https://jayarous.github.io/llm/topics/services.md): All public services documents in this inventory.

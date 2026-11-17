@@ -1,12 +1,13 @@
 # Jayarous Antony KS content map
 
-Inventory scope: complete. Public documents: 6.
+Inventory scope: complete. Public documents: 7.
 
 Personal site of Jayarous Antony KS, who builds websites, Android apps and custom software, with a page for each of his four Android apps on Google Play.
 
 ## Topics
 
 - [apps](https://jayarous.github.io/llm/topics/apps.md): All public apps documents in this inventory.
+- [guides](https://jayarous.github.io/llm/topics/guides.md): All public guides documents in this inventory.
 - [services](https://jayarous.github.io/llm/topics/services.md): All public services documents in this inventory.
 
 ## All public documents
@@ -17,3 +18,4 @@ Personal site of Jayarous Antony KS, who builds websites, Android apps and custo
 - [BillGen: GST and VAT invoice app for Android](https://jayarous.github.io/llm/pages/billgen.md): What BillGen does, price, privacy and common questions (en); [canonical page](https://jayarous.github.io/apps/billgen/).
 - [Game Mode Pro: game mode and FPS overlay for Android](https://jayarous.github.io/llm/pages/game-mode-pro.md): What Game Mode Pro does, price, privacy and common questions (en); [canonical page](https://jayarous.github.io/apps/game-mode-pro/).
 - [AirGrid: offline nearby chat app for Android](https://jayarous.github.io/llm/pages/airgrid.md): What AirGrid does, price, privacy and common questions (en); [canonical page](https://jayarous.github.io/apps/airgrid/).
+- [Chat without internet on Android: how it works and how to set it up](https://jayarous.github.io/llm/pages/chat-without-internet-android.md): Guide: How to chat without internet on Android (en); [canonical page](https://jayarous.github.io/guides/chat-without-internet-android/).

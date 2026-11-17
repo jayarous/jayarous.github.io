@@ -5,7 +5,7 @@
 */
 const fs = require("fs");
 const path = require("path");
-const { ORIGIN, OWNER, CHECKED, CHECKED_TEXT, icon, play, apps } = require("./site-data.js");
+const { ORIGIN, OWNER, CHECKED, CHECKED_TEXT, icon, play, apps, guides } = require("./site-data.js");
 
 const root = path.resolve(__dirname, "..");
 const work = path.join(root, ".seo-work", "markdown");
@@ -147,6 +147,7 @@ ${app.notes.map((n) => `          <p class="note">${esc(n)}</p>`).join("\n")}
           <dl class="faq">
 ${app.faq.map(([q, a]) => `            <div><dt>${esc(q)}</dt><dd>${esc(a)}</dd></div>`).join("\n")}
           </dl>
+${guides.filter((g) => g.appSlug === app.slug).map((g) => `          <p class="note">Guide: <a href="/guides/${g.slug}/">${esc(g.linkText)}</a></p>`).join("\n")}
           <p class="source-note">These details come from the ${esc(app.name)} listing on Google Play, checked on ${CHECKED_TEXT}. The listing has the current version, screenshots and reviews.</p>
         </section>
 
@@ -216,6 +217,7 @@ function appMarkdown(app) {
   }
   lines.push(`## Questions about ${app.name}`, "");
   app.faq.forEach(([q, a]) => lines.push(`### ${q}`, "", a, ""));
+  guides.filter((g) => g.appSlug === app.slug).forEach((g) => lines.push(`Guide: ${g.linkText}: ${ORIGIN}/guides/${g.slug}/`, ""));
   lines.push(`Source: the ${app.name} listing on Google Play (${play(app.pkg)}), checked on ${CHECKED_TEXT}.`, "");
   return lines.join("\n");
 }
@@ -309,13 +311,92 @@ ${apps.map((a) => `- **${a.name}** (Android app): ${a.cardSummary} ${ORIGIN}/app
 `;
 }
 
+/* ---------- Guides ---------- */
+function guidePage(g) {
+  const urlPath = `/guides/${g.slug}/`;
+  const app = apps.find((a) => a.slug === g.appSlug);
+  const main = `    <article class="app guide">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Guide</span>
+        </nav>
+
+        <header class="guide-hero">
+          <h1>${esc(g.h1)}</h1>
+          <p class="lede">${esc(g.lead)}</p>
+          <p class="byline">By <a href="/">${esc(OWNER)}</a>, developer of <a href="/apps/${app.slug}/">${esc(app.name)}</a>. Published ${g.publishedText}.</p>
+        </header>
+
+${g.sections.map((s) => `        <section class="app-section guide-section">
+          <h2>${esc(s.title)}</h2>
+${(s.paragraphs || []).map((p) => `          <p>${esc(p)}</p>`).join("\n")}
+${s.bullets ? `          <ul class="ticks">\n${s.bullets.map((b) => `            <li>${esc(b)}</li>`).join("\n")}\n          </ul>` : ""}
+${s.steps ? `          <ol class="guide-steps">\n${s.steps.map((b) => `            <li>${esc(b)}</li>`).join("\n")}\n          </ol>` : ""}
+${(s.after || []).map((p) => `          <p>${esc(p)}</p>`).join("\n")}
+        </section>`).join("\n")}
+
+        <section class="app-cta">
+          <div>
+            <h2>Get ${esc(app.name)}</h2>
+            <p>${esc(app.cardSummary)}</p>
+          </div>
+          <a class="btn btn-primary" href="${play(app.pkg)}" target="_blank" rel="noopener">Open ${esc(app.name)} on Google Play</a>
+        </section>
+
+        <section class="app-section">
+          <h2>Common questions</h2>
+          <dl class="faq">
+${g.faq.map(([q, a]) => `            <div><dt>${esc(q)}</dt><dd>${esc(a)}</dd></div>`).join("\n")}
+          </dl>
+          <p class="note">More about the app: <a href="/apps/${app.slug}/">${esc(app.name)} features, privacy and questions</a>.</p>
+        </section>
+      </div>
+    </article>`;
+
+  const article = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: g.h1,
+    description: g.metaDescription,
+    datePublished: g.published,
+    dateModified: g.published,
+    mainEntityOfPage: ORIGIN + urlPath,
+    author: { "@type": "Person", "@id": PERSON_ID, name: OWNER, url: ORIGIN + "/" }
+  };
+  return shell({
+    title: g.title,
+    description: g.metaDescription,
+    urlPath,
+    ogImage: icon(app.iconHash, 512),
+    jsonld: [article, crumbs([["Home", "/"], [g.h1, urlPath]])],
+    main
+  });
+}
+
+function guideMarkdown(g) {
+  const app = apps.find((a) => a.slug === g.appSlug);
+  const lines = [`# ${g.h1}`, "", g.lead, "", `By ${OWNER}, developer of ${app.name}. Published ${g.publishedText}.`, ""];
+  g.sections.forEach((s) => {
+    lines.push(`## ${s.title}`, "");
+    (s.paragraphs || []).forEach((p) => lines.push(p, ""));
+    if (s.bullets) { s.bullets.forEach((b) => lines.push(`- ${b}`)); lines.push(""); }
+    if (s.steps) { s.steps.forEach((b, i) => lines.push(`${i + 1}. ${b}`)); lines.push(""); }
+    (s.after || []).forEach((p) => lines.push(p, ""));
+  });
+  lines.push("## Common questions", "");
+  g.faq.forEach(([q, a]) => lines.push(`### ${q}`, "", a, ""));
+  lines.push(`${app.name} page: ${ORIGIN}/apps/${app.slug}/`, `${app.name} on Google Play: ${play(app.pkg)}`, "");
+  return lines.join("\n");
+}
+
 /* ---------- Write the site files ---------- */
 apps.forEach((app) => write(path.join(root, "apps", app.slug, "index.html"), appPage(app)));
+guides.forEach((g) => write(path.join(root, "guides", g.slug, "index.html"), guidePage(g)));
 write(path.join(root, "apps", "index.html"), hubPage());
 
 const hint1 = `If you are an LLM looking for site information, start at ${ORIGIN}/llms.txt.`;
 const hint2 = `Use ${ORIGIN}/sitemap.md to find the relevant topic and its linked Markdown answer; if it is absent, report that gap.`;
-const urls = ["/", "/apps/", ...apps.map((a) => `/apps/${a.slug}/`)];
+const urls = ["/", "/apps/", ...apps.map((a) => `/apps/${a.slug}/`), ...guides.map((g) => `/guides/${g.slug}/`)];
 
 write(path.join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -337,7 +418,8 @@ const revision = `${CHECKED}-seo-1`;
 const pages = [
   { id: "home", url: `${ORIGIN}/`, title: `${OWNER}: websites, Android apps and custom software`, purpose: "Who Jayarous Antony KS is, what he builds, his work and how to contact him", topic: "services", body: homeMarkdown() },
   { id: "apps", url: `${ORIGIN}/apps/`, title: `Android apps by ${OWNER}`, purpose: "List of the four Android apps with links to each app page and Google Play", topic: "apps", body: hubMarkdown() },
-  ...apps.map((a) => ({ id: a.slug, url: `${ORIGIN}/apps/${a.slug}/`, title: a.title, purpose: `What ${a.name} does, price, privacy and common questions`, topic: "apps", body: appMarkdown(a) }))
+  ...apps.map((a) => ({ id: a.slug, url: `${ORIGIN}/apps/${a.slug}/`, title: a.title, purpose: `What ${a.name} does, price, privacy and common questions`, topic: "apps", body: appMarkdown(a) })),
+  ...guides.map((g) => ({ id: g.slug, url: `${ORIGIN}/guides/${g.slug}/`, title: g.title, purpose: `Guide: ${g.linkText}`, topic: "guides", body: guideMarkdown(g) }))
 ];
 pages.forEach((p) => write(path.join(work, "source", `${p.id}.md`), p.body));
 write(path.join(work, "inventory.json"), JSON.stringify({
@@ -346,7 +428,7 @@ write(path.join(work, "inventory.json"), JSON.stringify({
   summary: "Personal site of Jayarous Antony KS, who builds websites, Android apps and custom software, with a page for each of his four Android apps on Google Play.",
   origin: ORIGIN,
   inventory_scope: "complete",
-  inventory_evidence: "Six static HTML pages in the site repository, all listed in sitemap.xml: home, apps overview and four app pages.",
+  inventory_evidence: "All static HTML pages in the site repository, each listed in sitemap.xml: home, apps overview, four app pages and the guides.",
   owner: OWNER,
   refresh_trigger: "Regenerate with tools/build-site.js on every content change or app listing update.",
   index_policy: "independent",

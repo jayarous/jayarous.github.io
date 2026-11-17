@@ -93,4 +93,6 @@ On your device. AirGrid does not operate a central messaging server for normal m
 
 Yes. You can send voice notes, photos and files to nearby peers when the local mesh connection supports the transfer.
 
+Guide: How to chat without internet on Android: https://jayarous.github.io/guides/chat-without-internet-android/
+
 Source: the AirGrid listing on Google Play (https://play.google.com/store/apps/details?id=com.airgrid.app), checked on 17 November 2026.

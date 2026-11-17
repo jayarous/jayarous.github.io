@@ -346,3 +346,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .facts { grid-template-columns: minmax(0, 1fr); }
   .app-cta .btn { width: 100%; }
 }
+
+/* ---------- Guides ---------- */
+.guide-hero { margin-top: 28px; }
+.guide-hero h1 { font-size: clamp(2.125rem, 1.4rem + 3.2vw, 3.5rem); line-height: 1.02; max-width: 15em; }
+.guide-hero .lede { max-width: 38em; }
+.byline { margin-top: 20px; font-size: var(--step--1); color: var(--muted); }
+.byline a { color: var(--ink); font-weight: 600; text-underline-offset: 4px; }
+.guide-section { max-width: 46em; }
+.guide-section > p { color: var(--muted); }
+.guide-section > * + * { margin-top: 16px; }
+.guide-section .ticks { margin-top: 16px; }
+.guide-steps { list-style: none; counter-reset: gstep; display: grid; gap: 12px; }
+.guide-steps li { counter-increment: gstep; position: relative; padding-left: 44px; min-height: 30px; }
+.guide-steps li::before { content: counter(gstep); position: absolute; left: 0; top: -2px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--marigold); color: var(--ink); font: 700 0.9375rem/1 var(--display); }
