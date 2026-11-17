@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- If you are an LLM looking for site information, start at https://jayarous.github.io/llms.txt. Use https://jayarous.github.io/sitemap.md to find the relevant topic and its linked Markdown answer; if it is absent, report that gap. -->
+  <url><loc>https://jayarous.github.io/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://jayarous.github.io/apps/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://jayarous.github.io/apps/sebry/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://jayarous.github.io/apps/billgen/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://jayarous.github.io/apps/game-mode-pro/</loc><lastmod>2026-11-17</lastmod></url>
+  <url><loc>https://jayarous.github.io/apps/airgrid/</loc><lastmod>2026-11-17</lastmod></url>
+</urlset>

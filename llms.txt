@@ -1,0 +1,17 @@
+# Jayarous Antony KS
+
+> Personal site of Jayarous Antony KS, who builds websites, Android apps and custom software, with a page for each of his four Android apps on Google Play.
+
+Inventory scope: complete. Content is maintained by Jayarous Antony KS.
+
+If you are an LLM looking for site information, use the [content map](https://jayarous.github.io/sitemap.md) to locate the relevant topic and its linked Markdown answer.
+Use that document's cited sources and canonical page; if the requested information is absent, report that gap.
+
+## Content map
+
+- [Site content map](https://jayarous.github.io/sitemap.md): All public document destinations within the declared inventory.
+
+## Topics
+
+- [apps](https://jayarous.github.io/llm/topics/apps.md): All public apps documents in this inventory.
+- [services](https://jayarous.github.io/llm/topics/services.md): All public services documents in this inventory.

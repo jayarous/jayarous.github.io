@@ -1,109 +1,10 @@
 (function () {
   "use strict";
 
-  var cfg = window.SITE || {};
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- Fill in details from site.config.js ---------- */
-  var name = cfg.name || "Your Name";
-  document.querySelectorAll('[data-fill="name"]').forEach(function (el) {
-    el.textContent = name;
-  });
-  document.title = name + " | Websites, apps and software";
-  document.getElementById("year").textContent = new Date().getFullYear();
-  if (cfg.location) {
-    document.getElementById("footer-location").textContent = ", " + cfg.location;
-  }
-
-  var whatsappDigits = String(cfg.whatsapp || "").replace(/\D/g, "");
-  var waLink = document.getElementById("link-whatsapp");
-  if (whatsappDigits) {
-    waLink.href = "https://wa.me/" + whatsappDigits + "?text=" +
-      encodeURIComponent("Hi " + name + ", I have a project in mind.");
-    waLink.hidden = false;
-  }
-
-  var emailLink = document.getElementById("link-email");
-  if (cfg.email) {
-    emailLink.href = "mailto:" + cfg.email;
-    emailLink.hidden = false;
-  }
-
-  var socials = document.getElementById("socials");
-  Object.keys(cfg.socials || {}).forEach(function (label) {
-    var url = cfg.socials[label];
-    if (!url) return;
-    var li = document.createElement("li");
-    var a = document.createElement("a");
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.textContent = label;
-    li.appendChild(a);
-    socials.appendChild(li);
-  });
-
-  var playLink = document.getElementById("link-play");
-  if (cfg.playStore) {
-    playLink.href = cfg.playStore;
-    playLink.hidden = false;
-  }
-
-  /* ---------- Projects ---------- */
-  var projectsEl = document.getElementById("projects");
-  (cfg.projects || []).forEach(function (p) {
-    var card = document.createElement("article");
-    card.className = "project";
-    card.dataset.kind = p.kind || "Website";
-
-    var thumb = document.createElement("div");
-    thumb.className = "project-thumb";
-    if (p.image) {
-      var img = document.createElement("img");
-      img.src = p.image;
-      img.alt = "Screenshot of " + p.title;
-      img.loading = "lazy";
-      thumb.appendChild(img);
-    } else if (p.icon) {
-      var icon = document.createElement("img");
-      icon.className = "project-icon";
-      icon.src = p.icon;
-      icon.alt = p.title + " app icon";
-      icon.loading = "lazy";
-      thumb.appendChild(icon);
-    } else {
-      var letter = document.createElement("span");
-      letter.setAttribute("aria-hidden", "true");
-      letter.textContent = (p.title || p.kind || "W").charAt(0).toUpperCase();
-      thumb.appendChild(letter);
-    }
-
-    var body = document.createElement("div");
-    body.className = "project-body";
-    var kind = document.createElement("span");
-    kind.className = "project-kind";
-    kind.textContent = p.kind || "";
-    var title = document.createElement("h3");
-    title.textContent = p.title || "";
-    var summary = document.createElement("p");
-    summary.textContent = p.summary || "";
-    body.appendChild(kind);
-    body.appendChild(title);
-    body.appendChild(summary);
-    if (p.link) {
-      var link = document.createElement("a");
-      link.className = "project-link";
-      link.href = p.link;
-      link.target = "_blank";
-      link.rel = "noopener";
-      link.textContent = p.linkLabel || "Visit project";
-      body.appendChild(link);
-    }
-
-    card.appendChild(thumb);
-    card.appendChild(body);
-    projectsEl.appendChild(card);
-  });
+  var year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
   /* ---------- Hero demo: a request turns into a product ---------- */
   var briefs = {
@@ -154,24 +55,32 @@
     })();
   }
 
-  tabs.forEach(function (tab, index) {
-    tab.addEventListener("click", function () {
-      showDemo(tab.dataset.demo, true);
+  if (tabs.length && panel && briefText && build) {
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function () {
+        showDemo(tab.dataset.demo, true);
+      });
+      tab.addEventListener("keydown", function (event) {
+        var step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+        if (!step) return;
+        event.preventDefault();
+        var next = tabs[(index + step + tabs.length) % tabs.length];
+        next.focus();
+        showDemo(next.dataset.demo, true);
+      });
     });
-    tab.addEventListener("keydown", function (event) {
-      var step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-      if (!step) return;
-      event.preventDefault();
-      var next = tabs[(index + step + tabs.length) % tabs.length];
-      next.focus();
-      showDemo(next.dataset.demo, true);
-    });
-  });
-  showDemo("site", true);
+    showDemo("site", true);
+  }
 
   /* ---------- Contact form ---------- */
   var form = document.getElementById("contact-form");
+  if (!form) return;
   var status = document.getElementById("form-status");
+  // Paste a form service address (for example from formspree.io) into the
+  // form's data-endpoint attribute in index.html to deliver messages directly.
+  var endpoint = form.getAttribute("data-endpoint") || "";
+  var emailLink = document.getElementById("link-email");
+  var email = emailLink ? emailLink.getAttribute("href").replace(/^mailto:/, "") : "";
 
   function setStatus(message, isError) {
     status.textContent = message;
@@ -201,11 +110,11 @@
       "Needs: " + data.get("kind") + "\n\n" +
       data.get("message");
 
-    if (cfg.formEndpoint) {
+    if (endpoint) {
       var button = form.querySelector("button[type=submit]");
       button.disabled = true;
       setStatus("Sending message…");
-      fetch(cfg.formEndpoint, {
+      fetch(endpoint, {
         method: "POST",
         headers: { Accept: "application/json" },
         body: data
@@ -224,20 +133,14 @@
       return;
     }
 
-    if (cfg.email) {
-      window.location.href = "mailto:" + cfg.email +
+    if (email) {
+      window.location.href = "mailto:" + email +
         "?subject=" + encodeURIComponent("New project enquiry from " + data.get("name")) +
         "&body=" + encodeURIComponent(summary);
       setStatus("Your email app has opened with the message ready to send.");
       return;
     }
 
-    if (whatsappDigits) {
-      window.open("https://wa.me/" + whatsappDigits + "?text=" + encodeURIComponent(summary), "_blank", "noopener");
-      setStatus("WhatsApp has opened with the message ready to send.");
-      return;
-    }
-
-    setStatus("This form is not connected yet. Add contact details in site.config.js.", true);
+    setStatus("This form is not connected yet. Use WhatsApp or email instead.", true);
   });
 })();

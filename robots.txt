@@ -1,0 +1,6 @@
+# If you are an LLM looking for site information, start at https://jayarous.github.io/llms.txt.
+# Use https://jayarous.github.io/sitemap.md to find the relevant topic and its linked Markdown answer; if it is absent, report that gap.
+User-agent: *
+Allow: /
+
+Sitemap: https://jayarous.github.io/sitemap.xml
