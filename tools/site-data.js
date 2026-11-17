@@ -17,16 +17,16 @@ const apps = [
     pkg: "com.sebry.app",
     name: "Sebry",
     iconHash: "a9jOtXdyOfmdpAAtB7R1EJp0oYSLDP3rQxtLJ-vdNVbOO-8Wg0EUCFupi6SpRIeMKPSz1TqjYk5C9KyBqRZD",
-    title: "Sebry: medication reminder app for Android",
-    h1: "Sebry, a medication reminder app for you and your family",
-    cardSummary: "Medication reminders, schedules and family health profiles in one app. Your data stays on your phone.",
-    metaDescription: "Sebry is an Android app for medicine reminders, dose tracking, stock and family health profiles. Your data stays on your phone. Free to install on Google Play.",
-    lead: "Sebry is an Android app that reminds you to take your medicines and keeps schedules, stock and care routines organised for you or your family. It is built privacy-first: your medicine data is stored on your phone, not on a server.",
+    title: "Sebry: medicine reminder app for Android",
+    h1: "Sebry, a medicine reminder app that keeps your data on your phone",
+    cardSummary: "Medicine reminders with alarms, stock tracking and refill warnings. Works offline, and your data stays on your phone.",
+    metaDescription: "Sebry is an Android app for medicine reminders with alarms, dose tracking and stock warnings. It works offline and keeps your data on your phone. Free for one person and three medicines.",
+    lead: "Sebry is an Android app that reminds you to take your medicines and keeps schedules and stock organised. It works offline and stores your medicine data on your phone, not on a server. The free plan covers one person, three medicines and eight reminders a day.",
     storeCategory: "Health & Fitness",
     schemaCategory: "HealthApplication",
-    price: "Free to install. Sebry Plus is an optional paid upgrade.",
+    price: "Free for one profile, three medicines and eight reminders a day. Sebry Plus is a subscription that removes those limits and adds family profiles, backup, reports and the health record tools.",
     updated: "2 May 2026",
-    languages: "English and Malayalam",
+    languages: "English, with Malayalam for the main screens",
     audienceTitle: "Who Sebry is for",
     audience: [
       "People managing their own daily medicines",
@@ -38,29 +38,32 @@ const apps = [
       {
         title: "Reminders and daily tracking",
         items: [
-          ["Medicine reminders and schedules", "Create reminders with dose details, timing, food instructions, start and end dates, and repeat options."],
-          ["Quick dose actions", "Mark a reminder as Taken, Skip or Snooze straight from the reminder."],
+          ["Medicine reminders and schedules", "Set a schedule for each medicine: daily, on chosen days or at an interval, as an ongoing medicine, a fixed course or as needed."],
+          ["Alarm-style alerts", "A reminder can show a full-screen alert over the lock screen, speak the medicine name and ring."],
+          ["Quick dose actions", "Answer a reminder with Take, Skip or Snooze, from the notification or the alert screen."],
+          ["Missed-dose follow-ups", "If you do not answer, Sebry reminds you again for up to 30 minutes."],
           ["Today view", "See today's medicines, upcoming doses, completed doses and what is still to come in one place."],
-          ["Sound and voice options", "Set reminder sounds and ringing behaviour, and use spoken medicine reminders where available."],
-          ["Quiet notification mode", "Temporarily silence reminders or switch them to vibration only."]
+          ["Quiet mode", "Silence reminders for a while, or switch them to vibration only."]
         ]
       },
       {
-        title: "Medicines, stock and family profiles",
+        title: "Medicines and stock",
         items: [
-          ["Medicine management", "Add and edit medicines with name, type, stock quantity, the profile they belong to and optional photos."],
-          ["Medicine name scan", "Scan a medicine label with the camera to help fill in the name. The scan runs on the device and does not need internet."],
-          ["Family profiles", "Create a profile for each person so medicines, schedules, lab reports and care tracking stay organised. Free use includes basic limits; Sebry Plus supports more profiles."],
-          ["Stock tracking", "Track how much of each medicine is left and see when stock is low, so refills are easier to plan."]
+          ["Medicine details", "Save each medicine with its name, strength, form, expiry date, stock and optional photos."],
+          ["Medicine name scan", "Photograph a medicine label and Sebry suggests the name. The scan runs on the phone and does not need internet."],
+          ["Stock tracking", "Each dose you mark as taken is subtracted from the stock. Sebry warns you inside the app when about 7, 3 and 1 days of a medicine are left."],
+          ["Expiry labels", "Medicines that have expired or expire soon are labelled."]
         ]
       },
       {
-        title: "Health records and Sebry Plus",
+        title: "With Sebry Plus",
         items: [
-          ["Lab report tracking", "Import lab reports, review the extracted results, filter report history and keep records linked to the right profile. AI-based extraction needs Sebry Plus and your own configured AI provider."],
-          ["Fluid balance tracking", "Log fluid intake and output, view daily totals and export the records. This is part of Sebry Plus."],
-          ["Optional AI assistance", "Sebry Plus users can connect their own AI provider API key for AI chat, medicine summaries, schedule suggestions, AI image scan and lab report extraction. AI features are optional and are off by default."],
-          ["Backup and restore", "Export and import your data as backup files, so you decide when and where it is shared."]
+          ["No limits and family profiles", "More than three medicines, more than eight reminders a day, and a profile for each family member."],
+          ["Backup and restore", "Export your data as a backup file and import it again. Lab reports and photo files are not part of the backup."],
+          ["Dose analytics and PDF reports", "See adherence over 7 to 90 days and share a PDF report."],
+          ["Lab reports", "Import a lab report as a photo or PDF and review the extracted results. This also needs your own AI provider key."],
+          ["Fluid balance", "Log fluid intake and output, view daily totals and export the records as CSV."],
+          ["Optional AI tools", "AI chat, medicine summaries, schedule suggestions and photo scan, using your own AI provider key. They are off until you set them up."]
         ]
       }
     ],
@@ -68,22 +71,24 @@ const apps = [
     privacy: [
       "Your medicine data is stored on your device.",
       "Sebry does not operate a server for your health data.",
-      "Sensitive app data is encrypted on the device.",
-      "Backup files are created only when you choose to export them.",
+      "Medicines, schedules and profiles are stored encrypted on the device.",
+      "There is no account and no sign-in.",
+      "Backup files are created only when you choose to export them. A backup file itself is not encrypted, so keep it somewhere safe.",
       "AI features are optional and send data only to the provider you configure.",
       "Your API key is stored securely on your device."
     ],
     notes: [
       "Sebry supports medication routine tracking, reminders and personal record keeping. It does not provide medical advice, diagnosis or treatment. Always follow guidance from your doctor, pharmacist or qualified healthcare professional.",
-      "Sebry includes adjustable text size and supports English and Malayalam."
+      "Sebry has an adjustable text size. The app is in English, with Malayalam available for the main screens. Notifications and spoken reminders are in English."
     ],
     faq: [
-      ["Is Sebry free?", "Sebry is free to install, and free use includes basic limits such as the number of family profiles. Sebry Plus is a paid upgrade that adds more profiles, fluid balance tracking and the optional AI features."],
-      ["Does Sebry work without internet?", "Yes for the core features. Medicine management, reminders, profiles, history and storage are designed to work offline on your phone, and the medicine name scan also runs on the device."],
-      ["Where does Sebry store my medicine data?", "On your phone. Sebry does not run a server for your health data, sensitive data is encrypted on the device, and backup files exist only if you export them."],
-      ["Can I manage medicines for my parents or children in Sebry?", "Yes. You can create a profile for each person, and each profile keeps its own medicines, schedules, lab reports and care tracking."],
+      ["Is Sebry free?", "Yes, for one profile, three medicines and eight reminders a day, with no ads. Sebry Plus is a subscription that removes those limits and adds family profiles, backup, reports, lab reports, fluid balance and the optional AI tools."],
+      ["Does Sebry work without internet?", "Yes. Medicines, schedules, reminders and stock work offline, and the medicine name scan runs on the phone. Only the optional AI tools need internet."],
+      ["Where does Sebry store my medicine data?", "On your phone. Sebry has no account and does not run a server for your health data. Medicines, schedules and profiles are stored encrypted on the device."],
+      ["Can I manage medicines for my parents or children in Sebry?", "Yes, with Sebry Plus. The free plan has one profile. With Plus you can create a profile for each person, and each profile keeps its own medicines and schedules."],
+      ["Does Sebry warn me when a medicine is running out?", "Yes. It shows a warning inside the app when about 7, 3 and 1 days of a medicine are left, based on your schedules. It does not send a push notification for low stock."],
       ["Does Sebry give medical advice?", "No. Sebry is for reminders, routine tracking and personal records. It does not provide medical advice, diagnosis or treatment."],
-      ["Which languages does Sebry support?", "English and Malayalam."]
+      ["Which languages does Sebry support?", "English, with Malayalam for the main screens. Notifications and spoken reminders are in English."]
     ]
   },
   {
@@ -851,6 +856,155 @@ const guides = [
       ["Does Game Mode Pro turn Do Not Disturb off when I stop playing?", "No. You turn it off yourself with the same DND switch."],
       ["How do I unlock the screen after a touch lock?", "Hold the lock icon for about a second and a half."],
       ["Do recordings include sound?", "No. Recordings are video only."]
+    ]
+  },
+  {
+    slug: "set-medicine-reminder-android",
+    appSlug: "sebry",
+    title: "How to set a medicine reminder on Android",
+    h1: "How to set a medicine reminder on your Android phone",
+    linkText: "How to set a medicine reminder on Android",
+    metaDescription: "Set a medicine reminder on Android with Sebry: add the medicine, create a schedule, and answer each reminder with Take, Skip or Snooze. Works offline, no account, free for three medicines.",
+    lead: "Sebry reminds you when a medicine is due and lets you answer with Take, Skip or Snooze. It works offline, needs no account, and is free for up to three medicines.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Add the medicine",
+        steps: [
+          "Install Sebry from Google Play and open it. On first launch it walks you through two steps: add a medicine, then create a schedule.",
+          "Enter the Medication name. You can also photograph the label and Sebry suggests the name.",
+          "Add the Strength and choose the form, such as tablet, capsule or syrup.",
+          "Enter the Stock you have, if you want Sebry to count it down.",
+          "Save the medicine."
+        ]
+      },
+      {
+        title: "Create the schedule",
+        steps: [
+          "Set the Dose and its unit, as your doctor or pharmacist told you.",
+          "Choose the Course Type: Ongoing, Fixed course or As needed. As needed sets no reminders.",
+          "Add the times under Time.",
+          "Choose the Frequency: daily, chosen days of the week, or an interval.",
+          "For a fixed course, set the Start Date and End Date.",
+          "Save the schedule."
+        ]
+      },
+      {
+        title: "When a reminder arrives",
+        paragraphs: [
+          "Sebry shows a notification with Take, Skip and Snooze. Take records the dose and subtracts it from your stock. Snooze repeats the reminder after 5 minutes. If you do not answer, Sebry reminds you again for up to 30 minutes.",
+          "Out of the box, Sebry speaks the reminder instead of ringing. If you want a ringtone, open Settings, then Notifications, and turn off Play TTS only."
+        ]
+      },
+      {
+        title: "Let Android deliver it on time",
+        paragraphs: ["Android can delay reminders from any app to save battery. Sebry's Home screen shows a button for each setting that is missing: Enable notifications, Enable exact alarms and Disable battery optimization. Tap each one and allow it."]
+      }
+    ],
+    faq: [
+      ["Is Sebry free?", "Yes, for one profile, three medicines and eight reminders a day. Sebry Plus is a subscription that removes those limits."],
+      ["Does Sebry need internet or an account?", "No. Reminders work offline, and there is no account or sign-in."],
+      ["Does Sebry tell me what dose to take?", "No. You enter the dose your doctor or pharmacist gave you. Sebry does not provide medical advice, diagnosis or treatment."],
+      ["Can I change how long Snooze waits?", "On the free plan Snooze is 5 minutes. With Sebry Plus you can set it from 1 to 30 minutes."]
+    ]
+  },
+  {
+    slug: "medicine-reminder-not-ringing-android",
+    appSlug: "sebry",
+    title: "Medicine reminder not ringing on Android? What to check",
+    h1: "Medicine reminders not ringing on Android: what to check",
+    linkText: "Medicine reminders not ringing: what to check",
+    metaDescription: "Android can delay or silence medicine reminders to save battery. The three settings that decide whether a reminder arrives on time, the sound settings to check, and where Sebry shows them.",
+    lead: "Android can delay or silence reminders from any app to save battery. These are the settings that decide whether a medicine reminder arrives on time, and where Sebry shows them.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "The three settings that matter",
+        bullets: [
+          "Notifications: on Android 13 or later, an app needs your permission to show notifications at all.",
+          "Exact alarms: lets an app fire a reminder at the exact minute instead of roughly on time.",
+          "Battery optimization: when it is on for an app, Android may hold the app's background work back."
+        ]
+      },
+      {
+        title: "Check them in Sebry",
+        steps: [
+          "Open Sebry. The Home screen shows a button for anything that is missing: Enable notifications, Enable exact alarms, Disable battery optimization.",
+          "Tap each button and allow the setting.",
+          "For a full check, open Settings, then Permissions.",
+          "In Android's own settings for the Sebry app, make sure full-screen notifications are allowed. Sebry uses them to show an alert over the lock screen."
+        ]
+      },
+      {
+        title: "Check the sound",
+        bullets: [
+          "Sebry speaks reminders by default instead of ringing. For a ringtone, open Settings, then Notifications, and turn off Play TTS only.",
+          "Raise the alarm volume. Sebry warns you with \"Alarm volume is low\" when you save a schedule.",
+          "Use Test reminder sound to hear what a reminder will sound like.",
+          "Check that quiet mode is off. Quiet mode silences reminders or switches them to vibration only."
+        ]
+      },
+      {
+        title: "Your phone's own battery saver",
+        paragraphs: ["Some phones add their own battery manager on top of Android's. If reminders still arrive late, look in the phone's battery settings for an option that lets Sebry run in the background without restrictions."]
+      },
+      {
+        title: "After a restart",
+        paragraphs: ["Sebry is built to set its reminders again when the phone restarts. Opening the app once after a restart is a simple way to be sure."]
+      }
+    ],
+    faq: [
+      ["Why does Android delay reminders?", "To save battery. Unless an app is allowed exact alarms and is exempt from battery optimization, Android may run its reminders late."],
+      ["Does Sebry need internet to remind me?", "No. Reminders are set on the phone and work offline."],
+      ["Will a reminder show on the lock screen?", "Yes, when full-screen notifications are allowed for Sebry in Android's settings."],
+      ["What if I miss a reminder?", "Sebry reminds you again for up to 30 minutes. For what to do about a missed dose, ask your doctor or pharmacist. Sebry does not provide medical advice."]
+    ]
+  },
+  {
+    slug: "track-medicine-stock-refill-android",
+    appSlug: "sebry",
+    title: "How to track medicine stock and know when to refill",
+    h1: "How to track your medicine stock and know when to refill",
+    linkText: "How to track medicine stock and know when to refill",
+    metaDescription: "Sebry for Android counts down your medicine stock each time you mark a dose as taken, and warns you in the app when about 7, 3 and 1 days are left. How to set it up.",
+    lead: "Sebry counts down your stock each time you mark a dose as taken, and warns you inside the app when about a week of a medicine is left.",
+    published: "2026-11-17",
+    publishedText: "17 November 2026",
+    sections: [
+      {
+        title: "Set it up",
+        steps: [
+          "Open the Medicines tab and add a medicine, or open one you already have.",
+          "Enter the Stock: the number you have, and the unit.",
+          "Make sure the medicine has a schedule with a Dose. Sebry uses the schedule to work out how many days of stock are left."
+        ]
+      },
+      {
+        title: "How the count works",
+        paragraphs: [
+          "Each time you answer a reminder with Take, Sebry subtracts that dose from the stock. Skip does not change it. If the stock is lower than the dose, Sebry does not record the dose and shows \"Not enough stock to log this dose.\"",
+          "When you buy more, edit the medicine and update the Stock number."
+        ]
+      },
+      {
+        title: "Low-stock warnings",
+        paragraphs: [
+          "Sebry shows a warning when about 7, 3 and 1 days of a medicine are left, once at each point. The warnings appear inside the app, not as push notifications, so you see them when you open Sebry. The 7, 3 and 1 day points cannot be changed.",
+          "With Sebry Plus, the warning has a Notify button that opens your phone's share menu with a short refill message you can send to someone."
+        ]
+      },
+      {
+        title: "Expiry dates",
+        paragraphs: ["If you enter an Expiry date, Sebry labels the medicine as Expiring soon or Expired. It does not send a notification about expiry."]
+      }
+    ],
+    faq: [
+      ["Is stock tracking free?", "Yes. Stock tracking and the low-stock warnings are in the free plan. The Notify button is part of Sebry Plus."],
+      ["Does Sebry order medicines or contact a pharmacy?", "No. Sebry keeps your own records on your phone. It does not connect to any pharmacy or healthcare service."],
+      ["Can I track a medicine I only take when needed?", "Yes. Give it an As needed schedule. No reminders are set, and you can still record doses and track stock."],
+      ["Does Sebry notify me when stock is low?", "It shows a warning inside the app. It does not send a push notification for low stock."]
     ]
   }
 ];

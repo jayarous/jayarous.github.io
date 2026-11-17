@@ -391,7 +391,8 @@ const guidesLead = `Short how-to guides by ${OWNER} for the Android apps he buil
 const guideGroups = [
   { appSlug: "airgrid", heading: "Staying in touch without internet", note: "These guides use AirGrid, an offline chat app for Android." },
   { appSlug: "billgen", heading: "Invoicing on your phone", note: "These guides use BillGen, an invoice maker for Android." },
-  { appSlug: "game-mode-pro", heading: "Gaming on Android", note: "These guides use Game Mode Pro, a gaming HUD for Android." }
+  { appSlug: "game-mode-pro", heading: "Gaming on Android", note: "These guides use Game Mode Pro, a gaming HUD for Android." },
+  { appSlug: "sebry", heading: "Taking medicines on time", note: "These guides use Sebry, a medicine reminder app for Android. Sebry does not provide medical advice." }
 ];
 
 function guidesHubPage() {
@@ -422,7 +423,7 @@ ${guides.filter((g) => g.appSlug === grp.appSlug).map((g) => `            <li>
   };
   return shell({
     title: `How-to guides for Android apps | ${OWNER}`,
-    description: "How-to guides for Android: chatting without internet with AirGrid, making GST and VAT invoices with BillGen, and a gaming HUD and 120 Hz profiles with Game Mode Pro.",
+    description: "How-to guides for Android: chatting without internet with AirGrid, GST and VAT invoices with BillGen, a gaming HUD with Game Mode Pro, and medicine reminders with Sebry.",
     urlPath: "/guides/",
     jsonld: [list, crumbs([["Home", "/"], ["Guides", "/guides/"]])],
     main
@@ -486,7 +487,7 @@ const pages = [
   { id: "home", url: `${ORIGIN}/`, title: `${OWNER}: websites, Android apps and custom software`, purpose: "Who Jayarous Antony KS is, what he builds, his work and how to contact him", topic: "services", body: homeMarkdown() },
   { id: "apps", url: `${ORIGIN}/apps/`, title: `Android apps by ${OWNER}`, purpose: "List of the four Android apps with links to each app page and Google Play", topic: "apps", body: hubMarkdown() },
   ...apps.map((a) => ({ id: a.slug, url: `${ORIGIN}/apps/${a.slug}/`, title: a.title, purpose: `What ${a.name} does, price, privacy and common questions`, topic: "apps", body: appMarkdown(a) })),
-  { id: "guides", url: `${ORIGIN}/guides/`, title: `Guides by ${OWNER}`, purpose: "List of how-to guides for AirGrid, BillGen and Game Mode Pro", topic: "guides", body: guidesHubMarkdown() },
+  { id: "guides", url: `${ORIGIN}/guides/`, title: `Guides by ${OWNER}`, purpose: "List of how-to guides for AirGrid, BillGen, Game Mode Pro and Sebry", topic: "guides", body: guidesHubMarkdown() },
   ...guides.map((g) => ({ id: g.slug, url: `${ORIGIN}/guides/${g.slug}/`, title: g.title, purpose: `Guide: ${g.linkText}`, topic: "guides", body: guideMarkdown(g) }))
 ];
 pages.forEach((p) => write(path.join(work, "source", `${p.id}.md`), p.body));

@@ -2,7 +2,7 @@
 
 [Site content map](https://jayarous.github.io/sitemap.md)
 
-- [Guides by Jayarous Antony KS](https://jayarous.github.io/llm/pages/guides.md): List of how-to guides for AirGrid, BillGen and Game Mode Pro (en); [canonical page](https://jayarous.github.io/guides/).
+- [Guides by Jayarous Antony KS](https://jayarous.github.io/llm/pages/guides.md): List of how-to guides for AirGrid, BillGen, Game Mode Pro and Sebry (en); [canonical page](https://jayarous.github.io/guides/).
 - [Chat without internet on Android: how it works and how to set it up](https://jayarous.github.io/llm/pages/chat-without-internet-android.md): Guide: How to chat without internet on Android (en); [canonical page](https://jayarous.github.io/guides/chat-without-internet-android/).
 - [Message each other on a cruise without Wi-Fi: what works on Android](https://jayarous.github.io/llm/pages/message-on-cruise-without-wifi.md): Guide: How to message each other on a cruise without Wi-Fi (en); [canonical page](https://jayarous.github.io/guides/message-on-cruise-without-wifi/).
 - [Message on a flight without Wi-Fi: Bluetooth chat between Android phones](https://jayarous.github.io/llm/pages/message-on-flight-without-wifi.md): Guide: How to message someone on the same flight without Wi-Fi (en); [canonical page](https://jayarous.github.io/guides/message-on-flight-without-wifi/).
@@ -14,3 +14,6 @@
 - [How to show a HUD overlay over your games on Android](https://jayarous.github.io/llm/pages/gaming-hud-overlay-android.md): Guide: How to show a HUD overlay over your games (en); [canonical page](https://jayarous.github.io/guides/gaming-hud-overlay-android/).
 - [How to set 120 Hz for games on Android without root](https://jayarous.github.io/llm/pages/set-120hz-refresh-rate-for-games-android.md): Guide: How to set 120 Hz for games without root (en); [canonical page](https://jayarous.github.io/guides/set-120hz-refresh-rate-for-games-android/).
 - [How to stop accidental touches and notifications while gaming on Android](https://jayarous.github.io/llm/pages/stop-accidental-touches-notifications-while-gaming.md): Guide: How to stop accidental touches and notifications while gaming (en); [canonical page](https://jayarous.github.io/guides/stop-accidental-touches-notifications-while-gaming/).
+- [How to set a medicine reminder on Android](https://jayarous.github.io/llm/pages/set-medicine-reminder-android.md): Guide: How to set a medicine reminder on Android (en); [canonical page](https://jayarous.github.io/guides/set-medicine-reminder-android/).
+- [Medicine reminder not ringing on Android? What to check](https://jayarous.github.io/llm/pages/medicine-reminder-not-ringing-android.md): Guide: Medicine reminders not ringing: what to check (en); [canonical page](https://jayarous.github.io/guides/medicine-reminder-not-ringing-android/).
+- [How to track medicine stock and know when to refill](https://jayarous.github.io/llm/pages/track-medicine-stock-refill-android.md): Guide: How to track medicine stock and know when to refill (en); [canonical page](https://jayarous.github.io/guides/track-medicine-stock-refill-android/).

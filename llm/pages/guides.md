@@ -4,7 +4,7 @@ Canonical: [Guides by Jayarous Antony KS](https://jayarous.github.io/guides/)
 
 Locale: en
 
-Purpose: List of how-to guides for AirGrid, BillGen and Game Mode Pro
+Purpose: List of how-to guides for AirGrid, BillGen, Game Mode Pro and Sebry
 
 Content updated: 2026-11-17
 
@@ -43,3 +43,11 @@ These guides use Game Mode Pro, a gaming HUD for Android. https://jayarous.githu
 - **How to show a HUD overlay over your games:** Game Mode Pro floats a small bubble over your game that opens into a HUD. It shows estimated FPS and warns you when the phone runs hot or the battery runs low. https://jayarous.github.io/guides/gaming-hud-overlay-android/
 - **How to set 120 Hz for games without root:** Game Mode Pro can switch your screen to its highest refresh rate when a game session starts and put your own setting back when it ends. It uses the free Shizuku app instead of root, and not every phone allows it. https://jayarous.github.io/guides/set-120hz-refresh-rate-for-games-android/
 - **How to stop accidental touches and notifications while gaming:** Game Mode Pro puts a touch lock and a Do Not Disturb switch in a floating HUD, so you can block stray touches and silence notifications without leaving your game. https://jayarous.github.io/guides/stop-accidental-touches-notifications-while-gaming/
+
+## Taking medicines on time
+
+These guides use Sebry, a medicine reminder app for Android. Sebry does not provide medical advice. https://jayarous.github.io/apps/sebry/
+
+- **How to set a medicine reminder on Android:** Sebry reminds you when a medicine is due and lets you answer with Take, Skip or Snooze. It works offline, needs no account, and is free for up to three medicines. https://jayarous.github.io/guides/set-medicine-reminder-android/
+- **Medicine reminders not ringing: what to check:** Android can delay or silence reminders from any app to save battery. These are the settings that decide whether a medicine reminder arrives on time, and where Sebry shows them. https://jayarous.github.io/guides/medicine-reminder-not-ringing-android/
+- **How to track medicine stock and know when to refill:** Sebry counts down your stock each time you mark a dose as taken, and warns you inside the app when about a week of a medicine is left. https://jayarous.github.io/guides/track-medicine-stock-refill-android/
